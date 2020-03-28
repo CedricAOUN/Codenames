@@ -1,0 +1,188 @@
+body {
+    text-align: center;
+    background-image: url('https://www.souar.com/data/media/9/hakpic5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(37, 37, 37) !important;
+}
+#team-select {
+    color: honeydew;
+    display: none;
+}
+
+#gamer-tag, #team-select {
+    color: honeydew;
+}
+.next {
+    color: black;
+    background-color: chartreuse;
+}
+h1 {
+    color: honeydew !important;
+}
+#blue-team-header h1 {
+    color:blue !important;
+    text-decoration: underline;
+}
+#blue-list, #red-list {
+    color: honeydew !important;
+}
+
+#blue-list li, #red-list li {
+    list-style-type: none;
+    font-weight: bold;
+}
+.row h1 {
+    text-align: center;
+}
+.row li {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 50px;
+    margin: 5px;
+    text-align: center;
+}
+.row ul {
+    text-align: center;
+}
+#blue-list-label {
+    background-color: orange;
+    border-radius: 0px 0px 20px 20px;
+    border: 3px solid black;
+    border-top: 0px;
+    width: 100%;
+}
+#red-list-label {
+    background-color: green;
+    border-radius: 0px 0px 20px 20px;
+    border: 3px solid black;
+    border-top: 0px;
+    width: 100%;
+}
+#blue-team-header {
+    border-color: orange;
+    border-width: 20px;
+    border-style: solid;
+    background-image: url('https://odiaspora.org/wp-content/uploads/2017/09/161031-michel-aoun-1007_0460017b7084e258faed1a111f4192b3.nbcnews-fp-360-360.jpg');
+    background-size: cover;
+    font-size: 29px;
+}
+
+#red-team-header {
+    border-color: green;
+    border-width: 20px;
+    border-style: solid;
+    background-image: url('https://i.pinimg.com/originals/b5/b2/31/b5b231763fc46dc39e325e034d2c651d.jpg');
+    background-size: cover;
+    font-size: 29px;
+}
+#game-screen {
+    height: 100%;
+    max-height: 1080px;
+}
+
+#game {
+    padding-top: 10px;
+    padding-right: 50px;
+    height: 565px;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: rgba(17, 17, 17, 0.267);
+    border:5px solid black;
+}
+#controls {
+    margin-top: 10px;
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    border-radius: 5px 5px;
+}
+#tagBar {
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    max-width: 20%;
+}
+#bigTitle {
+    padding-top: 50px;
+    background-color: black;
+    padding-bottom: 10px;
+    border-radius: 0px 0px 20px 20px;
+}
+
+#alerta {
+    position: absolute;
+    bottom: 0;
+}
+
+#game-screen, #controls {
+    display: none;
+}
+
+#word-list li {
+    list-style-type: none;
+    max-height: 100%;
+    height: 100px;
+    margin-bottom: 1px;
+    font-family: Anton, sans-serif;
+    font-size: 29px;
+    border: 1px solid white;
+    padding-top: 28px;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+#turn-label {
+    bottom: 0;
+    margin-top: 5px;
+    border-radius: 10px;
+    padding:10px;
+    background-color: green;
+}
+
+#game-win {
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    z-index: 10;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: none;
+}
+#orange-score {
+    background-color: orange;
+    border: 3px solid black;
+    position: absolute;
+    right: 0;
+    color: white;
+    bottom: 0;
+    height: 100px;
+    width: 50px;
+    font-size: 35px;
+    border-bottom: 0px;
+    border-right: 0px;
+    border-radius: 20px 0px 0px 0px;
+    font-weight: bold;
+}
+#green-score {
+    background-color: green;
+    border: 3px solid black;
+    border-left: 0px;
+    border-bottom: 0px;
+    position: absolute;
+    left: 0;
+    color: white;
+    bottom: 0;
+    height: 100px;
+    width: 50px;
+    font-size: 32px;
+    border-radius: 0px 20px 0px 0px;
+    font-weight: bold;
+}
+#shuffle-blue-spy {
+    display: none;
+}
+#shuffle-red-spy {
+    display: none;
+}
