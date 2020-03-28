@@ -131,6 +131,9 @@ h1 {
     text-align: center;
     letter-spacing: 0.05em;
 }
+.temp:hover {
+    background-color: teal;
+}
 
 #turn-label {
     bottom: 0;

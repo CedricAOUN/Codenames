@@ -129,7 +129,12 @@
         
         $('#shuffle-teams').click(function(){
             socket.emit('shuffle teams');
-        })
+            $('#blue-spymaster-btn').hide();
+            $('#red-spymaster-btn').hide();
+            $('#shuffle-red-spy').hide();
+            $('#shuffle-blue-spy').hide();
+        });
+
         $('#next').click(function(){
         socket.emit('username', $('#tagBar').val());
         $('#gamer-tag').hide();
@@ -173,9 +178,11 @@
             }
         });
         socket.on('error log', function(sentError){
-            $('body').append(`<div class="alert alert-warning" id="alerta" role="alert">${sentError}</div>`)
+            $('body').append(`<div class="alert alert-warning" id="alerta" role="alert">${sentError.msg}</div>`)
+            if(sentError.type == 'error') {
             $('#gamer-tag').show();
             $('#team-select').hide();
+            }
             setTimeout(function(){ $('#alerta').remove() }, 3000); 
         });
         socket.on('game screen', function(data){
@@ -424,6 +431,21 @@
             socket.emit('user enable', 'blue');
         });
 
+        socket.on('shuffle clicked', function(){
+            $('#blue-spymaster-btn').hide();
+            $('#red-spymaster-btn').hide();
+            $('#shuffle-red-spy').hide();
+            $('#shuffle-blue-spy').hide();
+        });
+
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.13.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
 </html>

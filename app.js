@@ -205,11 +205,11 @@ io.on('connection', function(socket){
   socket.on('username', function(username){
     console.log(username);
     if(username == userExistCheck(users, username)){
-      socket.emit('error log', `Username '${username}' already exists.`);
+      socket.emit('error log', {msg: `Username '${username}' already exists.`, type: 'error'});
     } else if(username == '') {
-      socket.emit('error log', `Type something atleast you stingy fuck.`);
+      socket.emit('error log', {msg: `Type something atleast you stingy fuck.`, type: 'error'});
     } else if(username.length > 10) {
-      socket.emit('error log', `Wen rayi7 habibe? Ayre bbahltak(Max Characters: 10)`);
+      socket.emit('error log', {msg: `Wen rayi7 habibe? Ayre bbahltak(Max Characters: 10)`, type: 'error'});
     } else {
     user = {name: username, id: socket.id, teamSelected: false, team: '', spymaster: false};
     users.push(user);
@@ -329,6 +329,7 @@ io.on('connection', function(socket){
       io.emit('remove user', element.name);
       io.emit('team select', {name: element.name, team: element.team})
     });
+    io.emit('shuffle clicked');
   });
 
   socket.on('shuffle spymaster', function(team){
@@ -347,11 +348,11 @@ io.on('connection', function(socket){
     if(team == 'red'){
       var b = Math.floor(Math.random() * redTeam.length);
       io.to(`${users[userIndexGet(redTeam[b])].id}`).emit('become spymaster', 'red');
-      io.emit('error log', `${redTeam[b]} was randomed as Bachir Gemayel`);
+      io.emit('error log', {msg: `${redTeam[b]} was randomed as Bachir Gemayel`, type: 'msg'});
     } else if (team == 'blue'){
       var c = Math.floor(Math.random() * blueTeam.length);
       io.to(`${users[userIndexGet(blueTeam[c])].id}`).emit('become spymaster', 'blue');
-      io.emit('error log', `${blueTeam[c]} was randomed as Michel Aoun`);
+      io.emit('error log', {msg: `${blueTeam[c]} was randomed as Michel Aoun`, type: 'msg'});
     }
   });
   socket.on('game ready check', function(team){
