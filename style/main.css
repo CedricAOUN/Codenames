@@ -189,3 +189,16 @@ h1 {
 #shuffle-red-spy {
     display: none;
 }
+@media only screen and (max-width: 1610px) {
+    #blue-team-header, #red-team-header {
+        max-width: 300px;
+    }
+    #red-team-header {
+        position: absolute;
+        right: 0 !important;
+        height: 565px;
+    }
+    #game {
+        max-width: 1000px;
+    }
+}
