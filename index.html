@@ -12,9 +12,9 @@
 </head>
 <body>
     <div class="container">
-        <div id='bigTitle'>
+        <div class='container' id='bigTitle'>
             <h1 class="col-12 align-self-center" style="text-align: center;">CODENAMES</h1>
-            <p style="text-align: center; color: white;">Belbos der3e bel 2eleb ad ma sort mat3oun be dahre Edition.</p>
+            <p class='col-12' style="text-align: center; color: white;">Belbos der3e bel 2eleb ad ma sort mat3oun be dahre Edition.</p>
             <div class="col-12 align-self-center align-middle" style="text-align: center;" id='gamer-tag'>Choose Your <b>G4M3R</b> Tag
                 <input class='md-textarea form-control' type="text" id='tagBar' name='name' />
                 <button class='btn btn-primary'type='submit' id='next'>NEXT</button>
@@ -101,6 +101,7 @@
     var username;
     var blueSpy;
     var redSpy;
+    var spymaster = false;
 
     var music1 = document.getElementById('hazit')
     music1.volume = '0.1'
@@ -198,6 +199,7 @@
         socket.on('game screen', function(data){
             musicStop(music1);
             musicStop(music2);
+            spymaster = false;
             $('.tempuser').css('border', 'none');
             socket.emit('user disable', 'red');
             socket.emit('user disable', 'blue');
@@ -359,6 +361,9 @@
         socket.on('user enable', function(){
             $('#game').css("pointer-events", "auto");
             $('#next-turn').show();
+            if(spymaster){
+                $('#game').css("pointer-events", "none");
+            }
         });
 
         socket.on('red spymaster', function(){
@@ -374,6 +379,7 @@
         });
 
         $('#red-spymaster-btn').click(function(){
+            spymaster= true;
             $('#next-turn').hide();
             socket.emit('red spy clicked', username);
             $('#red-spymaster-btn').hide();
@@ -385,6 +391,7 @@
             $('.orange-word').css({'color': 'orange', 'background-color': '#18241A', 'border': '3px solid orange'});
         })
         $('#blue-spymaster-btn').click(function(){
+            spymaster= true;
             $('#next-turn').hide();
             socket.emit('blue spy clicked', username);
             $('#blue-spymaster-btn').hide();
@@ -414,6 +421,7 @@
         });
         socket.on('become spymaster', function(team){
             if(team == 'red') {
+                spymaster = true;
                 $('#shuffle-teams').hide();
                 $('#red-spymaster-btn').hide();
                 $('#shuffle-blue-spy').hide();
@@ -426,6 +434,7 @@
                 $('.orange-word').css({'color': 'orange', 'background-color': '#18241A', 'border': '3px solid orange'});
                 $('#next-turn').hide();
             } else if(team == 'blue') {
+                spymaster = true;
                 $('#shuffle-teams').hide();
                 $('#blue-spymaster-btn').hide();
                 $('#shuffle-red-spy').hide();

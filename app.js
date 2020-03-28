@@ -276,12 +276,10 @@ io.on('connection', function(socket){
   });
 
   socket.on('blue spy clicked', function(data){
-    io.emit('error log', {msg: `${data} has become Bachir Gemayel`, type:'msg'});
     io.emit('blue spy clicked', data);
   });
 
   socket.on('red spy clicked', function(data){
-    io.emit('error log', {msg: `${data} has become Michel Aoun`, type:'msg'});
     io.emit('red spy clicked', data);
   });
 
@@ -340,12 +338,10 @@ io.on('connection', function(socket){
       var b = Math.floor(Math.random() * redTeam.length);
       io.to(`${users[userIndexGet(redTeam[b])].id}`).emit('become spymaster', 'red');
       io.emit('red spymaster css', redTeam[b]);
-      io.emit('error log', {msg: `${redTeam[b]} was randomed as Bachir Gemayel`, type: 'msg'});
     } else if (team == 'blue'){
       var c = Math.floor(Math.random() * blueTeam.length);
       io.to(`${users[userIndexGet(blueTeam[c])].id}`).emit('become spymaster', 'blue');
       io.emit('blue spymaster css', blueTeam[c]);
-      io.emit('error log', {msg: `${blueTeam[c]} was randomed as Michel Aoun`, type: 'msg'});
     }
   });
   socket.on('game ready check', function(team){
