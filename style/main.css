@@ -189,7 +189,7 @@ h1 {
 #shuffle-red-spy {
     display: none;
 }
-@media only screen and (max-width: 1610px) {
+@media only screen and (max-width: 1280px) {
     #blue-team-header, #red-team-header {
         max-width: 300px;
     }
@@ -199,6 +199,10 @@ h1 {
         height: 565px;
     }
     #game {
-        max-width: 1000px;
+        max-width: 680px;
+    }
+    #word-list li {
+        font-size: 20px;
+        padding-top: 32px;
     }
 }
