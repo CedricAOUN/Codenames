@@ -98,7 +98,7 @@
     var redTeam;
     var blueTeam;
     var gameState = [];
-    var username = $('#tagBar').val();
+    var username;
     var blueSpy;
     var redSpy;
 
@@ -106,6 +106,14 @@
     music1.volume = '0.1'
     var music2 = document.getElementById('nezl')
     music2.volume = '0.1'
+
+    function winCheck(){
+        if(orangeScore == 0) {
+                socket.emit('game win', 'ORANGANG');
+            } else if (greenScore == 0){
+                socket.emit('game win', 'GREENGOS');
+            }
+    }
 
     function musicPlay(music, time) {
         music.currentTime = time
@@ -138,6 +146,7 @@
 
         $('#next').click(function(){
         socket.emit('username', $('#tagBar').val());
+        username = $('#tagBar').val();
         $('#gamer-tag').hide();
         $('#team-select').show();
         }); 
@@ -171,11 +180,11 @@
         socket.on('team select', function(dataObj) {
             if (dataObj.team == 'blue') {
                 //add team to blue li
-                $('#blue-list').append($(`<li id="---${dataObj.name}">`).text(dataObj.name));
+                $('#blue-list').append($(`<li class='tempuser' id="---${dataObj.name}">`).text(dataObj.name));
                 
             } else {
                 //add team to red li
-                $('#red-list').append($(`<li id="---${dataObj.name}">`).text(dataObj.name));     
+                $('#red-list').append($(`<li class='tempuser' id="---${dataObj.name}">`).text(dataObj.name));     
             }
         });
         socket.on('error log', function(sentError){
@@ -189,6 +198,7 @@
         socket.on('game screen', function(data){
             musicStop(music1);
             musicStop(music2);
+            $('.tempuser').css('border', 'none');
             socket.emit('user disable', 'red');
             socket.emit('user disable', 'blue');
             currentGame = data;
@@ -265,7 +275,7 @@
                         } else {
                             orangeScore-- 
                         }
-
+                    winCheck();
                     $('#orange-score').val(orangeScore);
                     target.css( "background-color", "orange");
                     target.css( "pointer-events", "none");
@@ -278,7 +288,7 @@
                         } else {
                             greenScore-- 
                         }
-
+                    winCheck();
                     $('#green-score').val(greenScore);
                     target.css( "background-color", "green");
                     target.css( "pointer-events", "none");
@@ -331,12 +341,12 @@
                 $('#game-win').text('GREENGOS WIN');
                 $('#game-win').css('background-color', 'green');
                 $('#game-win').show();
-                musicPlay(music1, 0);
+                musicPlay(music1, 15.9);
             } else {
                 $('#game-win').text('ORANGANG WIN');
                 $('#game-win').css('background-color', 'orange');
                 $('#game-win').show();
-                musicPlay(music2, 17);
+                musicPlay(music2, 18.1);
             }
             setTimeout(function(){ $('#game-win').hide() }, 5000);
         });   
@@ -365,7 +375,7 @@
 
         $('#red-spymaster-btn').click(function(){
             $('#next-turn').hide();
-            socket.emit('red spy clicked');
+            socket.emit('red spy clicked', username);
             $('#red-spymaster-btn').hide();
             $('#shuffle-red-spy').hide();
             $('#game').css('pointer-events', 'none');
@@ -376,7 +386,7 @@
         })
         $('#blue-spymaster-btn').click(function(){
             $('#next-turn').hide();
-            socket.emit('blue spy clicked');
+            socket.emit('blue spy clicked', username);
             $('#blue-spymaster-btn').hide();
             $('#shuffle-red-spy').hide();
             $('#game').css('pointer-events', 'none');
@@ -386,14 +396,16 @@
             $('.orange-word').css({'color': 'orange', 'background-color': '#18241A', 'border': '3px solid orange'});
         })
 
-        socket.on('blue spy clicked', function(){
+        socket.on('blue spy clicked', function(data){
+            $(`.tempuser:contains('${data}')`).css('border', '5px solid red');
             $('#blue-spymaster-btn').hide();
             $('#shuffle-red-spy').hide();
             $('#shuffle-teams').hide();
             socket.emit('game ready check', 'blue');
             blueSpy = true;
         });
-        socket.on('red spy clicked', function(){
+        socket.on('red spy clicked', function(data){
+            $(`.tempuser:contains('${data}')`).css('border', '5px solid red');
             $('#red-spymaster-btn').hide();
             $('#shuffle-blue-spy').hide();
             $('#shuffle-teams').hide();
@@ -439,14 +451,13 @@
             $('#shuffle-blue-spy').hide();
         });
 
+        socket.on('red spymaster css', function(data) {
+            $(`.tempuser:contains('${data}')`).css('border', '5px solid red');
+        });
+        socket.on('blue spymaster css', function(data) {
+            $(`.tempuser:contains('${data}')`).css('border', '5px solid red');
+        });
+
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="/__/firebase/7.13.0/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
-
-    <!-- Initialize Firebase -->
-    <script src="/__/firebase/init.js"></script>
 </html>

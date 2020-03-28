@@ -48,8 +48,6 @@ var blueReady = false;
 
 io.on('connection', function(socket){
   connections++
-  console.log('there are '+ connections +' users connected');
-
    //Set already team selected users in a team.
    for (var i=0; i<users.length; i++) {
     if(users[i].teamSelected){
@@ -145,9 +143,7 @@ io.on('connection', function(socket){
 
   socket.on('disconnect', function(){
     connections--
-    console.log('Someone Disconnected! There are '+ connections +' users connected now')
     socket.broadcast.emit('remove user', usernameAuth(users));
-    console.log(usernameAuth(users) + ' disconnected');
     users.splice(userIndexAuth(users), 1);
     if(connections == 0){
       currentGame = undefined
@@ -174,7 +170,6 @@ io.on('connection', function(socket){
   });
 
   socket.on('button clicked', function(data){
-    console.log('button' + data[1] + 'was clicked and its a ' + data[0]+ ' word');
     if(data[0] == 'death') {
       socket.broadcast.emit('update button', ['death', data[1]]);
     } else if(data[0] == 'regular') {
@@ -203,13 +198,14 @@ io.on('connection', function(socket){
   
   //Create a user's object and add it to 'users'
   socket.on('username', function(username){
-    console.log(username);
     if(username == userExistCheck(users, username)){
       socket.emit('error log', {msg: `Username '${username}' already exists.`, type: 'error'});
     } else if(username == '') {
       socket.emit('error log', {msg: `Type something atleast you stingy fuck.`, type: 'error'});
-    } else if(username.length > 10) {
+    }  else if(username.length > 10) {
       socket.emit('error log', {msg: `Wen rayi7 habibe? Ayre bbahltak(Max Characters: 10)`, type: 'error'});
+    } else if(username.includes(' ')) {
+      socket.emit('error log', {msg: `Spaces break the code for some reason...DON'T USE THEM LUCA`, type: 'error'});
     } else {
     user = {name: username, id: socket.id, teamSelected: false, team: '', spymaster: false};
     users.push(user);
@@ -228,7 +224,6 @@ io.on('connection', function(socket){
       users[userIndexAuth(users)].team = 'blue';
       io.emit('team select', dataObj);
       socket.emit('game screen', currentGame);
-      console.log(`${usernameAuth(users)} Chose Blue`);
       } else if (team == 'red') { //if red team
       dataObj.name = usernameAuth(users);
       dataObj.team = 'red';
@@ -236,12 +231,9 @@ io.on('connection', function(socket){
       users[userIndexAuth(users)].team = 'red';
       io.emit('team select', dataObj);
       socket.emit('game screen', currentGame);
-      console.log(`${usernameAuth(users)} Chose Red`);
       }
   }); //socket team select
   
-
-  //needs testing
   socket.on('game win', function(team){
     if(team == 'ORANGANG') {
       io.emit('game win', 'GREENGOS');
@@ -254,7 +246,6 @@ io.on('connection', function(socket){
 
     if(data == 'red') {
       users.forEach(element => {
-        console.log(element.team);
         if(element.team == 'red') {
           io.to(`${element.id}`).emit('user disable');
         }
@@ -284,12 +275,14 @@ io.on('connection', function(socket){
     }  
   });
 
-  socket.on('blue spy clicked', function(){
-    io.emit('blue spy clicked');
+  socket.on('blue spy clicked', function(data){
+    io.emit('error log', {msg: `${data} has become Bachir Gemayel`, type:'msg'});
+    io.emit('blue spy clicked', data);
   });
 
-  socket.on('red spy clicked', function(){
-    io.emit('red spy clicked');
+  socket.on('red spy clicked', function(data){
+    io.emit('error log', {msg: `${data} has become Michel Aoun`, type:'msg'});
+    io.emit('red spy clicked', data);
   });
 
 
@@ -343,15 +336,15 @@ io.on('connection', function(socket){
       }
     });
 
-    console.log(redTeam);
-    console.log(blueTeam);
     if(team == 'red'){
       var b = Math.floor(Math.random() * redTeam.length);
       io.to(`${users[userIndexGet(redTeam[b])].id}`).emit('become spymaster', 'red');
+      io.emit('red spymaster css', redTeam[b]);
       io.emit('error log', {msg: `${redTeam[b]} was randomed as Bachir Gemayel`, type: 'msg'});
     } else if (team == 'blue'){
       var c = Math.floor(Math.random() * blueTeam.length);
       io.to(`${users[userIndexGet(blueTeam[c])].id}`).emit('become spymaster', 'blue');
+      io.emit('blue spymaster css', blueTeam[c]);
       io.emit('error log', {msg: `${blueTeam[c]} was randomed as Michel Aoun`, type: 'msg'});
     }
   });
