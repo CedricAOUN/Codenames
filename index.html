@@ -133,6 +133,7 @@
             $('#red-spymaster-btn').hide();
             $('#shuffle-red-spy').hide();
             $('#shuffle-blue-spy').hide();
+            socket.emit('new game');
         });
 
         $('#next').click(function(){
