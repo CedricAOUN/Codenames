@@ -7,7 +7,7 @@ var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 var xl = require('node-xlsx').default;
 var wordlist = require('./log-custom');
-
+var PORT = process.env.PORT || 3000;
 
 
 
@@ -370,7 +370,7 @@ io.on('connection', function(socket){
 }); //socket connection
 
 
-http.listen(3000, function(){
+http.listen(PORT, function(){
   console.log('listening on http://localhost:3000');
 });
 
