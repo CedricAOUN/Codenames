@@ -31,6 +31,15 @@ h1 {
 #blue-list li, #red-list li {
     list-style-type: none;
     font-weight: bold;
+    min-height: 40px;
+    max-height: 40px;
+    min-width: 100px;
+}
+.tempuser {
+    display:flex ;
+    margin: 0 auto;
+    align-items:center;
+    justify-content: center;
 }
 .row h1 {
     text-align: center;

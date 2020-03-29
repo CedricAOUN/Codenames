@@ -45,18 +45,13 @@ var Turns = ['blue','red'];
 var currentTeam = 'blue';
 var redReady = false;
 var blueReady = false;
+var redAmount = 0;
+var blueAmount = 0;
 
 io.on('connection', function(socket){
   connections++
    //Set already team selected users in a team.
-   for (var i=0; i<users.length; i++) {
-    if(users[i].teamSelected){
-      socket.emit('team select', {name: users[i].name, team: users[i].team});
-      if(currentGame != undefined){
-        io.emit('game screen', currentGame);
-      }
-    }
-  }
+   
   //some functions to call
   function usernameAuth(array){
     for (var i=0; i< array.length; i++) {
@@ -129,27 +124,48 @@ io.on('connection', function(socket){
       }
     }
   }
-  function UserFromId(theId){
-    users.forEach(element => {
-      if(element.id == theId){
-        return element.name;
+  function UserFromId(sockid){
+    for(var i=0; i<users.length; i++){
+      if(users[i].id == sockid){
+        return users[i].name
       }
-    });
+    }
   }
-  
-
-
-
-
+  function teamFromId(sockid){
+    for(var i=0; i<users.length; i++){
+      if(users[i].id == sockid){
+        return users[i].team
+      }
+    }
+  }
   socket.on('disconnect', function(){
     connections--
     socket.broadcast.emit('remove user', usernameAuth(users));
-    users.splice(userIndexAuth(users), 1);
     if(connections == 0){
       currentGame = undefined
     }
+    if(teamFromId(`${socket.id}`) == 'red'){
+      redAmount--
+      console.log('GREENGO LEFT');
+      users.splice(userIndexAuth(users), 1);
+      if(redAmount < 2 && redAmount < 2){
+        console.log('GREENGO LEFT AND RED AMOUNT AINT 2');
+        io.emit('wait', 'Please Wait For Enough Players (2 on Each Team)');
+      }
+    } else if(teamFromId(`${socket.id}`) == 'blue') {
+      blueAmount-- 
+      console.log('ORANGO LEFT');
+      users.splice(userIndexAuth(users), 1);
+      if(blueAmount < 2 && redAmount < 2){
+        io.emit('wait', 'Please Wait For Enough Players (2 on Each Team)');
+      }
+    }
+    
   });
 
+  if(redAmount < 3 && blueAmount < 3){
+    io.emit('wait', 'Please Wait For Enough Players (2 on Each Team)');
+  }
   
 
   socket.on('new game', function(){
@@ -202,8 +218,8 @@ io.on('connection', function(socket){
       socket.emit('error log', {msg: `Username '${username}' already exists.`, type: 'error'});
     } else if(username == '') {
       socket.emit('error log', {msg: `Type something atleast you stingy fuck.`, type: 'error'});
-    }  else if(username.length > 10) {
-      socket.emit('error log', {msg: `Wen rayi7 habibe? Ayre bbahltak(Max Characters: 10)`, type: 'error'});
+    }  else if(username.length > 20) {
+      socket.emit('error log', {msg: `Wen rayi7 habibe? Ayre bbahltak(Max Characters: 20)`, type: 'error'});
     } else if(username.includes(' ')) {
       socket.emit('error log', {msg: `Spaces break the code for some reason...DON'T USE THEM LUCA`, type: 'error'});
     } else {
@@ -214,8 +230,15 @@ io.on('connection', function(socket){
 
   //Authenticate the user, Handle the selected team
   socket.on('team select', function(team){
-  
-
+    for (var i=0; i<users.length; i++) {
+      if(users[i].teamSelected){
+        socket.emit('team select', {name: users[i].name, team: users[i].team});
+        if(currentGame != undefined){
+          io.to(`${socket.id}`).emit('game screen', currentGame);
+          // io.to(`${socket.id}`).emit('wait');
+        }
+      }
+    }
     var dataObj = {}
       if (team == 'blue') { //if blue team
       dataObj.name = usernameAuth(users);
@@ -283,6 +306,47 @@ io.on('connection', function(socket){
     io.emit('red spy clicked', data);
   });
 
+  socket.on('spymaster chosen', function(data){
+    //SORT TEAMS IN ARRAYS
+    var redTeam = [];
+    var blueTeam = [];
+    users.forEach(element => {
+      if(element.team == 'red') {
+        redTeam.push(element.name);
+      } else {
+        blueTeam.push(element.name);
+      }
+    });
+    //SELECT RANDOM TEAM MEMBER
+    var r = Math.floor(Math.random() * redTeam.length);
+    var b = Math.floor(Math.random() * blueTeam.length);
+    var randomRedID = users[userIndexGet(redTeam[r])].id;
+    var randomBlueID = users[userIndexGet(blueTeam[b])].id;
+    var randomRedUser = users[userIndexGet(redTeam[r])].name;
+    var randomBlueUser = users[userIndexGet(blueTeam[b])].name;
+    console.log(randomBlueID, randomRedID);
+    console.log(UserFromId(randomRedID));
+    // MANUAL RED SPY SETTING
+    if(data.type == 'manual' && data.team == 'red'){
+      io.to(`${socket.id}`).emit('set as spymaster');
+      io.emit('spymaster chosen', {team: 'red', name: UserFromId(socket.id)})
+    // MANUAL BLUE SPY SETTING
+    } else if (data.type == 'manual' && data.team == 'blue'){
+      io.to(`${socket.id}`).emit('set as spymaster');
+      io.emit('spymaster chosen', {team: 'blue', name: UserFromId(socket.id)})
+    // RANDOM RED SPY SETTING
+    } else if (data.type == 'random' && data.team == 'red') {
+      io.to(`${randomRedID}`).emit('set as spymaster');
+      io.emit('spymaster chosen', {team: 'red', name: randomRedUser})
+    // RANDOM BLUE SPY SETTING
+    } else if (data.type == 'random' && data.team == 'blue') {
+      io.to(`${randomBlueID}`).emit('set as spymaster');
+      io.emit('spymaster chosen', {team: 'blue', name: randomBlueUser})
+    }
+  });
+
+
+
 
   socket.on('switch team', function(data){
     if(data == 'red'){
@@ -323,39 +387,56 @@ io.on('connection', function(socket){
     io.emit('shuffle clicked');
   });
 
-  socket.on('shuffle spymaster', function(team){
-    var redTeam = [];
-    var blueTeam = [];
-    users.forEach(element => {
-      if(element.team == 'red') {
-        redTeam.push(element.name);
-      } else {
-        blueTeam.push(element.name);
+  socket.on('Player Amount', function(data){
+    if(data == 'red'){
+      redAmount++
+      if(blueAmount >= 2 && redAmount >= 2) {
+        io.emit('Enough Players');
       }
-    });
-
-    if(team == 'red'){
-      var b = Math.floor(Math.random() * redTeam.length);
-      io.to(`${users[userIndexGet(redTeam[b])].id}`).emit('become spymaster', 'red');
-      io.emit('red spymaster css', redTeam[b]);
-    } else if (team == 'blue'){
-      var c = Math.floor(Math.random() * blueTeam.length);
-      io.to(`${users[userIndexGet(blueTeam[c])].id}`).emit('become spymaster', 'blue');
-      io.emit('blue spymaster css', blueTeam[c]);
+    } else if(data == 'blue'){
+      blueAmount++
+      if(blueAmount >= 2 && redAmount >= 2) {
+        io.emit('Enough Players');
+      }
     }
   });
-  socket.on('game ready check', function(team){
-    if(team == 'red'){
-      redReady = true;
-    } else if(team == 'blue') {
-      blueReady = true;
-    }
 
-    if(blueReady && redReady){
-      io.emit('game ready')
-    }
-  })
+  io.emit('Team Amounts', {red: redAmount, blue: blueAmount});
+  // socket.on('shuffle spymaster', function(team){
+  //   var redTeam = [];
+  //   var blueTeam = [];
+  //   users.forEach(element => {
+  //     if(element.team == 'red') {
+  //       redTeam.push(element.name);
+  //     } else {
+  //       blueTeam.push(element.name);
+  //     }
+  //   });
 
+  //   if(team == 'red'){
+  //     var b = Math.floor(Math.random() * redTeam.length);
+  //     io.to(`${users[userIndexGet(redTeam[b])].id}`).emit('become spymaster', 'red');
+  //     io.emit('red spymaster css', redTeam[b]);
+  //   } else if (team == 'blue'){
+  //     var c = Math.floor(Math.random() * blueTeam.length);
+  //     io.to(`${users[userIndexGet(blueTeam[c])].id}`).emit('become spymaster', 'blue');
+  //     io.emit('blue spymaster css', blueTeam[c]);
+  //   }
+  // });
+  // socket.on('game ready check', function(team){
+  //   if(team == 'red'){
+  //     redReady = true;
+  //   } else if(team == 'blue') {
+  //     blueReady = true;
+  //   }
+
+  //   if(blueReady && redReady){
+  //     io.emit('game ready')
+  //   }
+  // })
+  socket.on('hide wait', function(){
+    socket.emit('hide wait');
+  });
   
 }); //socket connection
 

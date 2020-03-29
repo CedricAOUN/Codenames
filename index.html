@@ -21,8 +21,8 @@
             </div>
         <div class="col-12 align-self-center" style="text-align: center;" id='team-select'>
             <label>Choose A Team</label><br>
-            <button class='btn btn-warning' id="blueButton">ORANGE</button>
-            <button class='btn btn-success' id="redButton">GREEN</button>
+            <button class='btn btn-warning' id="blueButton">ORANGE<span id='orange-span'></span></button>
+            <button class='btn btn-success' id="redButton">GREEN<span id='green-span'></span></button>
         </div>
         </div>
     </div>
@@ -39,6 +39,7 @@
             </ul>
             </div>
             <div class='col-8' id='game'>
+                <h1 id='wait' style='display: none; background-color: rgba(0, 0, 0, 0.8); height: 97%; width: 98%; position: absolute; z-index: 15; padding-top: 250px;'>GAME IN PROGRESS! PLEASE WAIT FOR A NEW GAME</h1>
                 <h1 id='game-win'>STYLE TEST</h1>
                 <ul id='word-list'>
                 <div class='row' id='row1'>
@@ -67,13 +68,17 @@
         </div>
     </div>
     <div class="container" id='controls'>
-        <button class='btn btn-warning' id='red-spymaster-btn' style="display: none;">BECOME MICHEL AOUN</button>
+        <h2 id='choose' style="display: none;">Elect your leaders.</h2>
+        <img id='spinner' src='spinner.gif' height="100px">
+        <div class='controls'>
+        <button class='btn btn-warning' id='blue-spymaster-btn' style="display: none;">BECOME MICHEL AOUN</button>
         <button class='btn btn-warning' id='shuffle-blue-spy'>RANDOM MICHEL AOUN</button>
         <button class='btn btn-primary' id='new-game'>NEW GAME</button>
         <button class='btn btn-secondary' id='next-turn' style="display: none;">NEXT TURN</button>
         <button class='btn btn-success' id='shuffle-red-spy'>RANDOM BACHIR GEMAYEL</button>
-        <button class='btn btn-success' id='blue-spymaster-btn' style="display: none; ">BECOME BASHIR GEMAYEL</button><br>
+        <button class='btn btn-success' id='red-spymaster-btn' style="display: none; ">BECOME BASHIR GEMAYEL</button><br>
         <button class='btn btn-secondary' id='shuffle-teams' style="margin-top: 5px;">SHUFFLE TEAMS</button>
+        </div>
     </div>
 </body>
 <audio controls id="hazit" style="display: none;">
@@ -103,6 +108,7 @@
     var redSpy;
     var spymaster = false;
 
+
     var music1 = document.getElementById('hazit')
     music1.volume = '0.1'
     var music2 = document.getElementById('nezl')
@@ -123,17 +129,33 @@
     function musicStop(music) {
         music.pause();
     }
+    function dynamicFontSize(word, initialFontSize){
+        let length = word.length;
+        if(length >= 10) {
+            return initialFontSize - length + 3
+        }
+    }
+        $('#red-spymaster-btn').click(function(){
+            spymaster= true;
+            socket.emit('spymaster chosen', {team: 'red', type: 'manual'});
+            redSpy = true;
+        });
+        $('#blue-spymaster-btn').click(function(){
+            spymaster= true;
+            socket.emit('spymaster chosen', {team: 'blue', type: 'manual'});
+            blueSpy = true;
+        });
         $('#shuffle-blue-spy').click(function(){
-            socket.emit('shuffle spymaster', 'blue');
             $('#shuffle-blue-spy').hide();
-            $('#red-spymaster-btn').hide();
-            socket.emit('red spy clicked');
+            $('#blue-spymaster-btn').hide();
+            socket.emit('spymaster chosen', {team: 'blue', type: 'random'});
+            blueSpy = true;
         })
         $('#shuffle-red-spy').click(function(){
-            socket.emit('shuffle spymaster', 'red');
             $('#shuffle-red-spy').hide();
-            $('#blue-spymaster-btn').hide();
-            socket.emit('blue spy clicked');
+            $('#red-spymaster-btn').hide();
+            socket.emit('spymaster chosen', {team: 'red', type: 'random'});
+            redSpy = true;
         })
         
         $('#shuffle-teams').click(function(){
@@ -143,6 +165,9 @@
             $('#shuffle-red-spy').hide();
             $('#shuffle-blue-spy').hide();
             socket.emit('new game');
+            socket.emit('user disable', 'red');
+            socket.emit('user disable', 'blue');
+            socket.emit('hide wait');
         });
 
         $('#next').click(function(){
@@ -157,6 +182,7 @@
             $('#game-screen').show();
             $('#controls').show();
             $('#team-select').hide();
+            socket.emit('Player Amount', 'red');
         });
         // BLUE
         $('#blueButton').click(function(){
@@ -164,11 +190,15 @@
             $('#game-screen').show();
             $('#controls').show();
             $('#team-select').hide();
+            socket.emit('Player Amount', 'blue');
         });
         // 
         $('#new-game').click(function(){
             socket.emit('new game');
             console.log('test');
+            socket.emit('user disable', 'red');
+            socket.emit('user disable', 'blue');
+            socket.emit('hide wait');
         });
         $('#next-turn').click(function(){
             if(currentTeam == 'red'){
@@ -179,13 +209,16 @@
         });
         
         socket.on('team select', function(dataObj) {
-            if (dataObj.team == 'blue') {
-                //add team to blue li
-                $('#blue-list').append($(`<li class='tempuser' id="---${dataObj.name}">`).text(dataObj.name));
-                
-            } else {
-                //add team to red li
-                $('#red-list').append($(`<li class='tempuser' id="---${dataObj.name}">`).text(dataObj.name));     
+            if(!$(`#---${dataObj.name}`).length) {
+                if (dataObj.team == 'blue') {
+                    //add team to blue li
+                    $('#blue-list').append($(`<li class='tempuser' id="---${dataObj.name}">`).text(dataObj.name));
+                    $(`#---${dataObj.name}`).css('font-size', `${dynamicFontSize(dataObj.name, 29)}px`); 
+                } else if(dataObj.team == 'red') {
+                    //add team to red li
+                    $('#red-list').append($(`<li class='tempuser' id="---${dataObj.name}">`).text(dataObj.name)); 
+                    $(`#---${dataObj.name}`).css('font-size', `${dynamicFontSize(dataObj.name, 29)}px`);     
+                }
             }
         });
         socket.on('error log', function(sentError){
@@ -197,18 +230,18 @@
             setTimeout(function(){ $('#alerta').remove() }, 3000); 
         });
         socket.on('game screen', function(data){
+            $('#choose').show();
             musicStop(music1);
             musicStop(music2);
-            spymaster = false;
-            $('.tempuser').css('border', 'none');
-            socket.emit('user disable', 'red');
-            socket.emit('user disable', 'blue');
+            redSpy = false;
+            blueSpy = false;
+            $('.tempuser').css('color', 'white');
             currentGame = data;
             orangeScore = 9;
             greenScore = 8;
             $('#orange-score').val(orangeScore);
             $('#green-score').val(greenScore);
-            $('#game').css("pointer-events", "auto");
+            $('#game').css("pointer-events", "none");
             $('.temp').remove();
             for(var i=0; i<5; i++){
                 $('#row1').append($(`<li class='temp col ${wordType(currentGame[i])}' value='${wordType(currentGame[i])}' id=BID_${i}>${currentGame[i].word}</li>`));
@@ -227,6 +260,7 @@
             }
             $('#turn-label').show();
         });
+
         socket.on('switch team', function(data){
             if(data == 'blue'){
                 $('#game').css({'border': '5px solid orange'});
@@ -240,7 +274,6 @@
                 currentTeam = 'red'
                 socket.emit('user enable', 'red');
                 socket.emit('user disable', 'blue');
-
             }
         });
         socket.on('remove user', function(user){
@@ -367,66 +400,69 @@
         });
 
         socket.on('red spymaster', function(){
-            $('#blue-spymaster-btn').show();
+            $('#red-spymaster-btn').show();
             $('#shuffle-red-spy').show();
             $('#shuffle-teams').show();
             
         });
         socket.on('blue spymaster', function(){
-            $('#red-spymaster-btn').show();
+            $('#blue-spymaster-btn').show();
             $('#shuffle-blue-spy').show();
             $('#shuffle-teams').show();
         });
 
-        $('#red-spymaster-btn').click(function(){
-            spymaster= true;
-            $('#next-turn').hide();
-            socket.emit('red spy clicked', username);
-            $('#red-spymaster-btn').hide();
-            $('#shuffle-red-spy').hide();
-            $('#game').css('pointer-events', 'none');
-            $('.green-word').css({'color': '#0EB324', 'background-color': '#18241A', 'border': '3px solid green'});
-            $('.regular-word').css({'color': 'black', 'background-color': 'white', 'border': '1px solid black'});
-            $('.death-word').css({'background-color': 'black', 'border': '5px solid red'});
-            $('.orange-word').css({'color': 'orange', 'background-color': '#18241A', 'border': '3px solid orange'});
-        })
-        $('#blue-spymaster-btn').click(function(){
-            spymaster= true;
-            $('#next-turn').hide();
-            socket.emit('blue spy clicked', username);
-            $('#blue-spymaster-btn').hide();
-            $('#shuffle-red-spy').hide();
-            $('#game').css('pointer-events', 'none');
-            $('.green-word').css({'color': '#0EB324', 'background-color': '#18241A', 'border': '3px solid green'});
-            $('.regular-word').css({'color': 'black', 'background-color': 'white', 'border': '1px solid black'});
-            $('.death-word').css({'background-color': 'black', 'border': '5px solid red'});
-            $('.orange-word').css({'color': 'orange', 'background-color': '#18241A', 'border': '3px solid orange'});
-        })
+       
 
-        socket.on('blue spy clicked', function(data){
-            $(`.tempuser:contains('${data}')`).css('border', '5px solid red');
+
+        //Spymasters have their page updated with this.
+        socket.on('set as spymaster', function(){   
+            $('#next-turn').hide();
             $('#blue-spymaster-btn').hide();
-            $('#shuffle-red-spy').hide();
-            $('#shuffle-teams').hide();
-            socket.emit('game ready check', 'blue');
-            blueSpy = true;
-        });
-        socket.on('red spy clicked', function(data){
-            $(`.tempuser:contains('${data}')`).css('border', '5px solid red');
             $('#red-spymaster-btn').hide();
+            $('#shuffle-red-spy').hide();
             $('#shuffle-blue-spy').hide();
-            $('#shuffle-teams').hide();
-            socket.emit('game ready check', 'red');
-            redSpy = true;
+            $('#game').css('pointer-events', 'none');
+            $('.green-word').css({'color': '#0EB324', 'background-color': '#18241A', 'border': '3px solid green'});
+            $('.regular-word').css({'color': 'black', 'background-color': 'white', 'border': '1px solid black'});
+            $('.death-word').css({'background-color': 'black', 'border': '5px solid red'});
+            $('.orange-word').css({'color': 'orange', 'background-color': '#18241A', 'border': '3px solid orange'});
         });
+
+        //Everyone is informed who spymaster is, and controlls are removed.
+        socket.on('spymaster chosen', function(data){
+            console.log(data.name);
+            $(`#---${data.name}`).css('color', 'red');
+            $('#shuffle-teams').hide();
+            $('#game').css('pointer-events');
+            if(data.team == 'red') {
+                $(`#---${data.name}`).css('color', 'red');
+                $('#red-spymaster-btn').hide();
+                $('#shuffle-red-spy').hide();
+                redSpy = true;
+                if(redSpy && blueSpy){
+                    socket.emit('user enable', currentTeam);
+                    $('#choose').hide();
+                }
+            }
+            else if(data.team == 'blue'){
+                $(`#---${data.name}`).css('color', 'red');
+                $('#blue-spymaster-btn').hide();
+                $('#shuffle-blue-spy').hide();
+                blueSpy = true;
+                if(redSpy && blueSpy){
+                    socket.emit('user enable', currentTeam);
+                    $('#choose').hide();
+                }
+            }
+            
+        });
+
         socket.on('become spymaster', function(team){
             if(team == 'red') {
-                spymaster = true;
                 $('#shuffle-teams').hide();
                 $('#red-spymaster-btn').hide();
-                $('#shuffle-blue-spy').hide();
                 $('#shuffle-red-spy').hide();
-                socket.emit('red spy clicked');
+                $('#shuffle-red-spy').hide();
                 $('#game').css('pointer-events', 'none');
                 $('.green-word').css({'color': '#0EB324', 'background-color': '#18241A', 'border': '3px solid green'});
                 $('.regular-word').css({'color': 'black', 'background-color': 'white', 'border': '1px solid black'});
@@ -434,12 +470,10 @@
                 $('.orange-word').css({'color': 'orange', 'background-color': '#18241A', 'border': '3px solid orange'});
                 $('#next-turn').hide();
             } else if(team == 'blue') {
-                spymaster = true;
                 $('#shuffle-teams').hide();
                 $('#blue-spymaster-btn').hide();
-                $('#shuffle-red-spy').hide();
                 $('#shuffle-blue-spy').hide();
-                socket.emit('red spy clicked');
+                $('#shuffle-blue-spy').hide();
                 $('#game').css('pointer-events', 'none');
                 $('.green-word').css({'color': '#0EB324', 'background-color': '#18241A', 'border': '3px solid green'});
                 $('.regular-word').css({'color': 'black', 'background-color': 'white', 'border': '1px solid black'});
@@ -467,6 +501,24 @@
             $(`.tempuser:contains('${data}')`).css('border', '5px solid red');
         });
 
+        socket.on('Enough Players', function(){
+            $('#wait').hide();
+        });
+
+        socket.on('wait', function(data){
+            $('#spinner').show();
+            $('.controls').hide();
+            $('#wait').show();
+            $('#wait').text(data);
+            $('#game').css('pointer-events', 'none');
+        });
+        socket.on('Enough Players', function(){
+            $('#spinner').hide();
+            $('#wait').hide();
+            $('.controls').show();
+            $('#choose').css('color','white');
+            socket.emit('user enable', currentTeam);
+        });
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>
