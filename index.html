@@ -68,7 +68,7 @@
         </div>
     </div>
     <div class="container" id='controls'>
-        <h2 id='choose' style="display: none;">Elect your leaders.</h2>
+        <h2 id='choose' style="display: none">Elect your leaders.</h2>
         <img id='spinner' src='https://s5.gifyu.com/images/Spinner84cb304ac2c91935.gif' height="100px">
         <div class='controls'>
         <button class='btn btn-warning' id='blue-spymaster-btn' style="display: none;">BECOME MICHEL AOUN</button>
@@ -230,6 +230,7 @@
             setTimeout(function(){ $('#alerta').remove() }, 3000); 
         });
         socket.on('game screen', function(data){
+            socket.emit('user disable', 'blue');
             $('#choose').show();
             musicStop(music1);
             musicStop(music2);
@@ -452,6 +453,7 @@
                 if(redSpy && blueSpy){
                     socket.emit('user enable', currentTeam);
                     $('#choose').hide();
+
                 }
             }
             
@@ -506,6 +508,7 @@
         });
 
         socket.on('wait', function(data){
+            $('#choose').hide();
             $('#spinner').show();
             $('.controls').hide();
             $('#wait').show();
@@ -516,8 +519,25 @@
             $('#spinner').hide();
             $('#wait').hide();
             $('.controls').show();
+            $('#choose').hide();
             $('#choose').css('color','white');
             socket.emit('user enable', currentTeam);
+        });
+        socket.on('Span Update', function(data){
+            let redstr;
+            let bluestr;
+            if(data[0] > 1 || data[0] == 0) {
+                redstr = 'players'
+            } else {
+                redstr = 'player'
+            }
+            if(data[1] > 1 || data[1] == 0) {
+                bluestr = 'players'
+            } else {
+                bluestr = 'player'
+            }
+            $('#green-span').text(`(${data[0]} ${redstr})`);
+            $('#orange-span').text(`(${data[1]} ${bluestr})`);
         });
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

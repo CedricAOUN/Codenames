@@ -47,6 +47,7 @@ var redReady = false;
 var blueReady = false;
 var redAmount = 0;
 var blueAmount = 0;
+var pattern = /[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/
 
 io.on('connection', function(socket){
   connections++
@@ -163,6 +164,8 @@ io.on('connection', function(socket){
     
   });
 
+  io.emit('Span Update', [redAmount, blueAmount]);
+
   if(redAmount < 3 && blueAmount < 3){
     io.emit('wait', 'Please Wait For Enough Players (2 on Each Team)');
   }
@@ -222,6 +225,8 @@ io.on('connection', function(socket){
       socket.emit('error log', {msg: `Wen rayi7 habibe? Ayre bbahltak(Max Characters: 20)`, type: 'error'});
     } else if(username.includes(' ')) {
       socket.emit('error log', {msg: `Spaces break the code for some reason...DON'T USE THEM LUCA`, type: 'error'});
+    } else if(pattern.test(username)){
+      socket.emit('error log', {msg: `Only English letters and Numbers allowed`, type: 'error'});
     } else {
     user = {name: username, id: socket.id, teamSelected: false, team: '', spymaster: false};
     users.push(user);
@@ -390,11 +395,13 @@ io.on('connection', function(socket){
   socket.on('Player Amount', function(data){
     if(data == 'red'){
       redAmount++
+      io.emit('Span Update', [redAmount, blueAmount]);
       if(blueAmount >= 2 && redAmount >= 2) {
         io.emit('Enough Players');
       }
     } else if(data == 'blue'){
       blueAmount++
+      io.emit('Span Update', [redAmount, blueAmount]);
       if(blueAmount >= 2 && redAmount >= 2) {
         io.emit('Enough Players');
       }
