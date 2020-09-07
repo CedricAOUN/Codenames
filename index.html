@@ -13,8 +13,7 @@
     <div class="container">
         <div class='container' id='bigTitle'>
             <h1 class="col-12 align-self-center" style="text-align: center;">CODENAMES</h1>
-            <p class='col-12' style="text-align: center; color: white;">Belbos der3e bel 2eleb ad ma sort mat3oun be dahre Edition.</p>
-            <div class="col-12 align-self-center align-middle" style="text-align: center;" id='gamer-tag'>Choose Your <b>G4M3R</b> Tag
+            <div class="col-12 align-self-center align-middle" style="text-align: center;" id='gamer-tag'>Choose Your Name Tag
                 <input class='md-textarea form-control' type="text" id='tagBar' name='name' />
                 <button class='btn btn-primary'type='submit' id='next'>NEXT</button>
             </div>
@@ -33,13 +32,12 @@
             <div class='col' id='blue-team-header'>
             <input type="button" disabled='true' id="orange-score" ></label>
             <ul id='blue-list'>
-                <label id='blue-list-label'>ORANGANG</label>
+                <label id='blue-list-label'>ORANGE</label>
                 
             </ul>
             </div>
             <div class='col-8' id='game'>
                 <h1 id='wait' style='display: none; background-color: rgba(0, 0, 0, 0.8); height: 97%; width: 98%; position: absolute; z-index: 15; padding-top: 250px;'>GAME IN PROGRESS! PLEASE WAIT FOR A NEW GAME</h1>
-                <h1 id='game-win'>STYLE TEST</h1>
                 <ul id='word-list'>
                 <div class='row' id='row1'>
                     
@@ -61,31 +59,31 @@
             <div class="col" id='red-team-header'>
             <input type="button" disabled='true' id="green-score"></label>
             <ul id='red-list'>
-                <label id='red-list-label'>GREENGOS</label>
+                <label id='red-list-label'>GREEN</label>
             </ul>
             </div>
         </div>
     </div>
     <div class="container" id='controls'>
-        <h2 id='choose' style="display: none">Elect your leaders.</h2>
+        <h2 id='choose' style="display: none">Choose Your Spy.</h2>
         <img id='spinner' src='https://s5.gifyu.com/images/Spinner84cb304ac2c91935.gif' height="100px">
         <div class='controls'>
-        <button class='btn btn-warning' id='blue-spymaster-btn' style="display: none;">BECOME MICHEL AOUN</button>
-        <button class='btn btn-warning' id='shuffle-blue-spy'>RANDOM MICHEL AOUN</button>
+        <button class='btn btn-warning' id='blue-spymaster-btn' style="display: none;">BECOME ORANGE SPY</button>
+        <button class='btn btn-warning' id='shuffle-blue-spy'>RANDOM ORANGE SPY</button>
         <button class='btn btn-primary' id='new-game'>NEW GAME</button>
         <button class='btn btn-secondary' id='next-turn' style="display: none;">NEXT TURN</button>
-        <button class='btn btn-success' id='shuffle-red-spy'>RANDOM BACHIR GEMAYEL</button>
-        <button class='btn btn-success' id='red-spymaster-btn' style="display: none; ">BECOME BASHIR GEMAYEL</button><br>
+        <button class='btn btn-success' id='shuffle-red-spy'>RANDOM GREEN SPY</button>
+        <button class='btn btn-success' id='red-spymaster-btn' style="display: none; ">BECOME GREEN SPY</button><br>
         <button class='btn btn-secondary' id='shuffle-teams' style="margin-top: 5px;">SHUFFLE TEAMS</button>
         </div>
     </div>
 </body>
-<audio controls id="hazit" style="display: none;">
+<audio controls id="hazit" style="display: none;" disabled>
     <source src="hazit.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
 
-<audio controls id="nezl" style="display: none;">
+<audio controls id="nezl" style="display: none;" disabled>
     <source src="nezl.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>

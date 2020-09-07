@@ -1,6 +1,5 @@
 body {
     text-align: center;
-    background-image: url('https://www.souar.com/data/media/9/hakpic5.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-color: rgb(37, 37, 37) !important;
@@ -13,6 +12,7 @@ body {
 #gamer-tag, #team-select {
     color: honeydew;
 }
+
 .next {
     color: black;
     background-color: chartreuse;
@@ -72,7 +72,7 @@ h1 {
     border-color: orange;
     border-width: 20px;
     border-style: solid;
-    background-image: url('https://odiaspora.org/wp-content/uploads/2017/09/161031-michel-aoun-1007_0460017b7084e258faed1a111f4192b3.nbcnews-fp-360-360.jpg');
+    background-color: gray;
     background-size: cover;
     font-size: 29px;
 }
@@ -81,7 +81,7 @@ h1 {
     border-color: green;
     border-width: 20px;
     border-style: solid;
-    background-image: url('https://i.pinimg.com/originals/b5/b2/31/b5b231763fc46dc39e325e034d2c651d.jpg');
+    background-color: gray;
     background-size: cover;
     font-size: 29px;
 }

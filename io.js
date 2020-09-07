@@ -1,1 +1,444 @@
-var _0x366b=['c3dpdGNoIHRlYW0=','M3B4IHNvbGlkIG9yYW5nZQ==','PGxpIGNsYXNzPSd0ZW1wIGNvbCA=','d2hpdGU=','I2dhbWUtc2NyZWVu','Zm9udC1zaXpl','R1JFRU5HT1MgV0lO','I3NodWZmbGUtYmx1ZS1zcHk=','I2dyZWVuLXNjb3Jl','ZGVhdGg=','c2hvdw==','Z3JlZW4td29yZA==','T1JBTkdBTkcgVFVSTg==','JyBpZD1CSURf','R1JFRU5HT1MgVFVSTg==','I2dyZWVuLXNwYW4=','I2dhbWUtd2lu','Y3VycmVudFRpbWU=','I2dhbWVyLXRhZw==','I2NvbnRyb2xz','Y3Nz','bGVuZ3Ro','cGF1c2U=','YXV0bw==','UGxheWVyIEFtb3VudA==','cGxheWVy','b3JhbmdlLXdvcmQ=','bWFudWFs','dXNlcm5hbWU=','I3NodWZmbGUtdGVhbXM=','IzE4MjQxQQ==','cGxheWVycw==','JyB2YWx1ZT0n','Ym9keQ==','Lm9yYW5nZS13b3Jk','cmVndWxhcg==','bmV3IGdhbWU=','Ymx1ZSBzcHltYXN0ZXIgY3Nz','I3JvdzU=','RW5vdWdoIFBsYXllcnM=','LnRlbXB1c2VyOmNvbnRhaW5zKCc=','dGVhbQ==','dmFs','cmVtb3ZlIHVzZXI=','d29yZA==','QklEXw==','LnRlbXB1c2Vy','LmdyZWVuLXdvcmQ=','R1JFRU5HT1M=','dGFyZ2V0','dGV4dA==','c2h1ZmZsZSBjbGlja2Vk','Ym9yZGVy','I3dhaXQ=','cG9pbnRlci1ldmVudHM=','I3NwaW5uZXI=','Y29sb3I=','LmNvbnRyb2xz','aGlkZQ==','ZGFya2dyYXk=','dmFsdWU=','I2JsdWUtc3B5bWFzdGVyLWJ0bg==','c2h1ZmZsZSB0ZWFtcw==','bG9n','M3B4IHNvbGlkIGdyZWVu','I29yYW5nZS1zY29yZQ==','dGVhbSBzZWxlY3Q=','c2V0IGFzIHNweW1hc3Rlcg==','MXB4IHNvbGlkIGJsYWNr','NXB4IHNvbGlkIG9yYW5nZQ==','Y2xpY2s=','ZXJyb3I=','Z2FtZSB3aW4=','cmVkIHNweW1hc3RlciBjc3M=','bmV6bA==','I3RhZ0Jhcg==','Z3JlZW4=','YXR0cg==','PGRpdiBjbGFzcz0iYWxlcnQgYWxlcnQtd2FybmluZyIgaWQ9ImFsZXJ0YSIgcm9sZT0iYWxlcnQiPg==','bmFtZQ==','ZW1pdA==','YmVjb21lIHNweW1hc3Rlcg==','I3JvdzQ=','I3JlZC1saXN0','I3RlYW0tc2VsZWN0','PGxpIGNsYXNzPSd0ZW1wdXNlcicgaWQ9Ii0tLQ==','dHlwZQ==','NXB4IHNvbGlkIGdyZWVu','YmxhY2s=','dXNlciBlbmFibGU=','Iy0tLQ==','dm9sdW1l','LnRlbXA=','Ymx1ZSBzcHltYXN0ZXI=','cmVndWxhci13b3Jk','bm9uZQ==','I3JvdzI=','b3Jhbmdl','I25leHQtdHVybg==','I2FsZXJ0YQ==','T1JBTkdBTkc=','cmFuZG9t','dXBkYXRlIGJ1dHRvbg==','Z2FtZSBzY3JlZW4=','I3NodWZmbGUtcmVkLXNweQ==','I2Nob29zZQ==','LnJlZ3VsYXItd29yZA==','cmVtb3Zl','I2dhbWU=','PC9saT4=','cmVk','c3B5bWFzdGVyIGNob3Nlbg==','dXNlciBkaXNhYmxl','I3JlZC1zcHltYXN0ZXItYnRu','YnV0dG9uIGNsaWNrZWQ=','I2JsdWVCdXR0b24=','PC9kaXY+','Z2FtZSByZWFkeQ==','ZXJyb3IgbG9n','d2FpdA==','Z2V0RWxlbWVudEJ5SWQ=','LmRlYXRoLXdvcmQ=','NXB4IHNvbGlkIHJlZA==','I3JvdzM=','I29yYW5nZS1zcGFu','MC4x','YXBwZW5k','U3BhbiBVcGRhdGU=','ZGVhdGgtd29yZA==','I3JlZEJ1dHRvbg==','Ymx1ZQ==','YmFja2dyb3VuZC1jb2xvcg==','cGxheQ==','IzBFQjMyNA==','I3dvcmQtbGlzdA=='];(function(_0x11f987,_0x366bc5){var _0x7277ba=function(_0x1ea726){while(--_0x1ea726){_0x11f987['push'](_0x11f987['shift']());}};_0x7277ba(++_0x366bc5);}(_0x366b,0x68));var _0x7277=function(_0x11f987,_0x366bc5){_0x11f987=_0x11f987-0x0;var _0x7277ba=_0x366b[_0x11f987];if(_0x7277['NRBydF']===undefined){(function(){var _0x10b391;try{var _0x204ed7=Function('return\x20(function()\x20'+'{}.constructor(\x22return\x20this\x22)(\x20)'+');');_0x10b391=_0x204ed7();}catch(_0x266ef1){_0x10b391=window;}var _0x553476='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';_0x10b391['atob']||(_0x10b391['atob']=function(_0x52a966){var _0x27e2ca=String(_0x52a966)['replace'](/=+$/,'');var _0x2d1e12='';for(var _0x11796f=0x0,_0x5d1734,_0x50117d,_0x54b407=0x0;_0x50117d=_0x27e2ca['charAt'](_0x54b407++);~_0x50117d&&(_0x5d1734=_0x11796f%0x4?_0x5d1734*0x40+_0x50117d:_0x50117d,_0x11796f++%0x4)?_0x2d1e12+=String['fromCharCode'](0xff&_0x5d1734>>(-0x2*_0x11796f&0x6)):0x0){_0x50117d=_0x553476['indexOf'](_0x50117d);}return _0x2d1e12;});}());_0x7277['XhPxzI']=function(_0x4ac224){var _0x4cc57b=atob(_0x4ac224);var _0x22b677=[];for(var _0x371788=0x0,_0x1a1359=_0x4cc57b['length'];_0x371788<_0x1a1359;_0x371788++){_0x22b677+='%'+('00'+_0x4cc57b['charCodeAt'](_0x371788)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x22b677);};_0x7277['ARZAzy']={};_0x7277['NRBydF']=!![];}var _0x1ea726=_0x7277['ARZAzy'][_0x11f987];if(_0x1ea726===undefined){_0x7277ba=_0x7277['XhPxzI'](_0x7277ba);_0x7277['ARZAzy'][_0x11f987]=_0x7277ba;}else{_0x7277ba=_0x1ea726;}return _0x7277ba;};var socket=io();var currentTeam=_0x7277('0x1a');var currentGame;var orangeScore=0x9;var greenScore=0x8;var redTeam;var blueTeam;var gameState=[];var username;var blueSpy;var redSpy;var spymaster=![];var music1=document[_0x7277('0x10')]('hazit');music1[_0x7277('0x7a')]=_0x7277('0x15');var music2=document['getElementById'](_0x7277('0x69'));music2[_0x7277('0x7a')]=_0x7277('0x15');function winCheck(){if(orangeScore==0x0){socket['emit']('game\x20win','ORANGANG');}else if(greenScore==0x0){socket[_0x7277('0x6f')]('game\x20win',_0x7277('0x4f'));}}function musicPlay(_0x16e08c,_0x566477){_0x16e08c[_0x7277('0x30')]=_0x566477;_0x16e08c[_0x7277('0x1c')]();}function musicStop(_0x584ce7){_0x584ce7[_0x7277('0x35')]();}function dynamicFontSize(_0x3907d,_0x424984){let _0x187603=_0x3907d[_0x7277('0x34')];if(_0x187603>=0xa){return _0x424984-_0x187603+0x3;}}$(_0x7277('0x9'))[_0x7277('0x65')](function(){spymaster=!![];socket[_0x7277('0x6f')](_0x7277('0x7'),{'team':_0x7277('0x6'),'type':'manual'});redSpy=!![];});$(_0x7277('0x5c'))[_0x7277('0x65')](function(){spymaster=!![];socket['emit'](_0x7277('0x7'),{'team':_0x7277('0x1a'),'type':_0x7277('0x3a')});blueSpy=!![];});$(_0x7277('0x26'))[_0x7277('0x65')](function(){$(_0x7277('0x26'))[_0x7277('0x59')]();$(_0x7277('0x5c'))[_0x7277('0x59')]();socket[_0x7277('0x6f')](_0x7277('0x7'),{'team':_0x7277('0x1a'),'type':_0x7277('0x84')});blueSpy=!![];});$(_0x7277('0x0'))[_0x7277('0x65')](function(){$('#shuffle-red-spy')[_0x7277('0x59')]();$(_0x7277('0x9'))[_0x7277('0x59')]();socket[_0x7277('0x6f')]('spymaster\x20chosen',{'team':_0x7277('0x6'),'type':_0x7277('0x84')});redSpy=!![];});$('#shuffle-teams')[_0x7277('0x65')](function(){socket[_0x7277('0x6f')](_0x7277('0x5d'));$(_0x7277('0x5c'))[_0x7277('0x59')]();$(_0x7277('0x9'))[_0x7277('0x59')]();$(_0x7277('0x0'))[_0x7277('0x59')]();$(_0x7277('0x26'))[_0x7277('0x59')]();socket[_0x7277('0x6f')](_0x7277('0x43'));socket[_0x7277('0x6f')](_0x7277('0x8'),_0x7277('0x6'));socket[_0x7277('0x6f')](_0x7277('0x8'),_0x7277('0x1a'));socket[_0x7277('0x6f')]('hide\x20wait');});$('#next')[_0x7277('0x65')](function(){socket[_0x7277('0x6f')](_0x7277('0x3b'),$(_0x7277('0x6a'))['val']());username=$(_0x7277('0x6a'))[_0x7277('0x49')]();$(_0x7277('0x31'))[_0x7277('0x59')]();$(_0x7277('0x73'))[_0x7277('0x29')]();});$(_0x7277('0x19'))[_0x7277('0x65')](function(){socket[_0x7277('0x6f')](_0x7277('0x61'),'red');$(_0x7277('0x23'))[_0x7277('0x29')]();$('#controls')['show']();$('#team-select')[_0x7277('0x59')]();socket[_0x7277('0x6f')]('Player\x20Amount','red');});$(_0x7277('0xb'))[_0x7277('0x65')](function(){socket[_0x7277('0x6f')](_0x7277('0x61'),'blue');$('#game-screen')['show']();$(_0x7277('0x32'))[_0x7277('0x29')]();$(_0x7277('0x73'))[_0x7277('0x59')]();socket[_0x7277('0x6f')](_0x7277('0x37'),_0x7277('0x1a'));});$('#new-game')[_0x7277('0x65')](function(){socket[_0x7277('0x6f')](_0x7277('0x43'));console[_0x7277('0x5e')]('test');socket[_0x7277('0x6f')](_0x7277('0x8'),'red');socket['emit'](_0x7277('0x8'),'blue');socket[_0x7277('0x6f')]('hide\x20wait');});$(_0x7277('0x81'))[_0x7277('0x65')](function(){if(currentTeam==_0x7277('0x6')){socket[_0x7277('0x6f')](_0x7277('0x1f'),_0x7277('0x1a'));}else{socket[_0x7277('0x6f')](_0x7277('0x1f'),_0x7277('0x6'));}});socket['on']('team\x20select',function(_0x25c287){if(!$(_0x7277('0x79')+_0x25c287['name'])['length']){if(_0x25c287['team']==_0x7277('0x1a')){$('#blue-list')[_0x7277('0x16')]($(_0x7277('0x74')+_0x25c287['name']+'\x22>')[_0x7277('0x51')](_0x25c287[_0x7277('0x6e')]));$('#---'+_0x25c287[_0x7277('0x6e')])['css']('font-size',dynamicFontSize(_0x25c287[_0x7277('0x6e')],0x1d)+'px');}else if(_0x25c287[_0x7277('0x48')]=='red'){$(_0x7277('0x72'))[_0x7277('0x16')]($(_0x7277('0x74')+_0x25c287['name']+'\x22>')[_0x7277('0x51')](_0x25c287[_0x7277('0x6e')]));$(_0x7277('0x79')+_0x25c287['name'])[_0x7277('0x33')](_0x7277('0x24'),dynamicFontSize(_0x25c287[_0x7277('0x6e')],0x1d)+'px');}}});socket['on'](_0x7277('0xe'),function(_0xb9b577){$(_0x7277('0x40'))[_0x7277('0x16')](_0x7277('0x6d')+_0xb9b577['msg']+_0x7277('0xc'));if(_0xb9b577[_0x7277('0x75')]==_0x7277('0x66')){$(_0x7277('0x31'))[_0x7277('0x29')]();$(_0x7277('0x73'))[_0x7277('0x59')]();}setTimeout(function(){$(_0x7277('0x82'))[_0x7277('0x3')]();},0xbb8);});socket['on'](_0x7277('0x86'),function(_0x4b0242){socket[_0x7277('0x6f')](_0x7277('0x8'),_0x7277('0x1a'));$(_0x7277('0x1'))[_0x7277('0x29')]();musicStop(music1);musicStop(music2);redSpy=![];blueSpy=![];$(_0x7277('0x4d'))[_0x7277('0x33')](_0x7277('0x57'),'white');currentGame=_0x4b0242;orangeScore=0x9;greenScore=0x8;$(_0x7277('0x60'))['val'](orangeScore);$(_0x7277('0x27'))['val'](greenScore);$(_0x7277('0x4'))[_0x7277('0x33')](_0x7277('0x55'),'none');$(_0x7277('0x7b'))[_0x7277('0x3')]();for(var _0xd851f8=0x0;_0xd851f8<0x5;_0xd851f8++){$('#row1')[_0x7277('0x16')]($(_0x7277('0x21')+wordType(currentGame[_0xd851f8])+_0x7277('0x3f')+wordType(currentGame[_0xd851f8])+_0x7277('0x2c')+_0xd851f8+'>'+currentGame[_0xd851f8][_0x7277('0x4b')]+'</li>'));}for(var _0xd851f8=0x5;_0xd851f8<0xa;_0xd851f8++){$(_0x7277('0x7f'))[_0x7277('0x16')]($(_0x7277('0x21')+wordType(currentGame[_0xd851f8])+_0x7277('0x3f')+wordType(currentGame[_0xd851f8])+'\x27\x20id=BID_'+_0xd851f8+'>'+currentGame[_0xd851f8][_0x7277('0x4b')]+_0x7277('0x5')));}for(var _0xd851f8=0xa;_0xd851f8<0xf;_0xd851f8++){$(_0x7277('0x13'))[_0x7277('0x16')]($(_0x7277('0x21')+wordType(currentGame[_0xd851f8])+'\x27\x20value=\x27'+wordType(currentGame[_0xd851f8])+_0x7277('0x2c')+_0xd851f8+'>'+currentGame[_0xd851f8][_0x7277('0x4b')]+_0x7277('0x5')));}for(var _0xd851f8=0xf;_0xd851f8<0x14;_0xd851f8++){$(_0x7277('0x71'))[_0x7277('0x16')]($('<li\x20class=\x27temp\x20col\x20'+wordType(currentGame[_0xd851f8])+_0x7277('0x3f')+wordType(currentGame[_0xd851f8])+_0x7277('0x2c')+_0xd851f8+'>'+currentGame[_0xd851f8]['word']+_0x7277('0x5')));}for(var _0xd851f8=0x14;_0xd851f8<0x19;_0xd851f8++){$(_0x7277('0x45'))[_0x7277('0x16')]($(_0x7277('0x21')+wordType(currentGame[_0xd851f8])+_0x7277('0x3f')+wordType(currentGame[_0xd851f8])+_0x7277('0x2c')+_0xd851f8+'>'+currentGame[_0xd851f8]['word']+_0x7277('0x5')));}$('#turn-label')[_0x7277('0x29')]();});socket['on'](_0x7277('0x1f'),function(_0x267820){if(_0x267820==_0x7277('0x1a')){$(_0x7277('0x4'))[_0x7277('0x33')]({'border':_0x7277('0x64')});$('#turn-label')['css'](_0x7277('0x1b'),_0x7277('0x80'))[_0x7277('0x51')](_0x7277('0x2b'));currentTeam='blue';socket[_0x7277('0x6f')]('user\x20enable',_0x7277('0x1a'));socket[_0x7277('0x6f')](_0x7277('0x8'),_0x7277('0x6'));}else{$(_0x7277('0x4'))[_0x7277('0x33')]({'border':_0x7277('0x76')});$('#turn-label')[_0x7277('0x33')](_0x7277('0x1b'),'green')[_0x7277('0x51')](_0x7277('0x2d'));currentTeam='red';socket[_0x7277('0x6f')](_0x7277('0x78'),_0x7277('0x6'));socket['emit'](_0x7277('0x8'),_0x7277('0x1a'));}});socket['on'](_0x7277('0x4a'),function(_0x9b5e30){$('#---'+_0x9b5e30)[_0x7277('0x3')]();});function wordType(_0x45ff40){if(_0x45ff40[_0x7277('0x28')]){return _0x7277('0x18');}else if(_0x45ff40[_0x7277('0x1a')]){return _0x7277('0x39');}else if(_0x45ff40[_0x7277('0x6')]){return _0x7277('0x2a');}else{return _0x7277('0x7d');}}$(_0x7277('0x1e'))['click'](function(_0x418192){var _0x43d965=$(_0x418192[_0x7277('0x50')]);$(_0x7277('0x3c'))[_0x7277('0x59')]();for(var _0x1f74bc=0x0;_0x1f74bc<0x19;_0x1f74bc++){if(_0x43d965['attr']('id')==_0x7277('0x4c')+_0x1f74bc){if(_0x43d965['attr'](_0x7277('0x5b'))==_0x7277('0x7d')){_0x43d965[_0x7277('0x33')](_0x7277('0x1b'),_0x7277('0x5a'));_0x43d965[_0x7277('0x33')](_0x7277('0x57'),_0x7277('0x77'));_0x43d965[_0x7277('0x33')](_0x7277('0x55'),_0x7277('0x7e'));socket[_0x7277('0x6f')](_0x7277('0xa'),[_0x7277('0x42'),_0x7277('0x4c')+_0x1f74bc]);console[_0x7277('0x5e')](gameState);}else if(_0x43d965[_0x7277('0x6c')](_0x7277('0x5b'))==_0x7277('0x39')){if(orangeScore==0x0){socket[_0x7277('0x6f')](_0x7277('0x67'),_0x7277('0x1a'));}else{orangeScore--;}winCheck();$(_0x7277('0x60'))[_0x7277('0x49')](orangeScore);_0x43d965['css'](_0x7277('0x1b'),_0x7277('0x80'));_0x43d965[_0x7277('0x33')]('pointer-events',_0x7277('0x7e'));socket[_0x7277('0x6f')](_0x7277('0xa'),[_0x7277('0x1a'),_0x7277('0x4c')+_0x1f74bc]);}else if(_0x43d965[_0x7277('0x6c')](_0x7277('0x5b'))==_0x7277('0x2a')){if(greenScore==0x0){socket[_0x7277('0x6f')](_0x7277('0x67'),_0x7277('0x6'));}else{greenScore--;}winCheck();$(_0x7277('0x27'))[_0x7277('0x49')](greenScore);_0x43d965[_0x7277('0x33')](_0x7277('0x1b'),_0x7277('0x6b'));_0x43d965[_0x7277('0x33')]('pointer-events',_0x7277('0x7e'));socket[_0x7277('0x6f')]('button\x20clicked',[_0x7277('0x6'),_0x7277('0x4c')+_0x1f74bc]);}else if(_0x43d965[_0x7277('0x6c')](_0x7277('0x5b'))==_0x7277('0x18')){if(currentTeam==_0x7277('0x6')){socket[_0x7277('0x6f')](_0x7277('0x67'),_0x7277('0x83'));}else{socket[_0x7277('0x6f')](_0x7277('0x67'),'GREENGOS');}_0x43d965[_0x7277('0x33')](_0x7277('0x1b'),_0x7277('0x77'));socket['emit'](_0x7277('0xa'),[_0x7277('0x28'),_0x7277('0x4c')+_0x1f74bc]);_0x43d965[_0x7277('0x33')](_0x7277('0x55'),_0x7277('0x7e'));$('#game')[_0x7277('0x33')](_0x7277('0x55'),'none');}}}});socket['on'](_0x7277('0x85'),function(_0x3bf839){$(_0x7277('0x3c'))[_0x7277('0x59')]();var _0x4ba283=$('#'+_0x3bf839[0x1]);if(_0x3bf839[0x0]==_0x7277('0x28')){_0x4ba283[_0x7277('0x33')]('background-color','black');_0x4ba283[_0x7277('0x33')](_0x7277('0x55'),_0x7277('0x7e'));$('#game')['css'](_0x7277('0x55'),_0x7277('0x7e'));}else if(_0x3bf839[0x0]==_0x7277('0x42')){_0x4ba283[_0x7277('0x33')]('pointer-events',_0x7277('0x7e'));_0x4ba283[_0x7277('0x33')]('background-color',_0x7277('0x5a'));_0x4ba283['css'](_0x7277('0x57'),_0x7277('0x77'));}else if(_0x3bf839[0x0]=='red'){greenScore--;_0x4ba283['css'](_0x7277('0x55'),_0x7277('0x7e'));$(_0x7277('0x27'))[_0x7277('0x49')](greenScore);_0x4ba283[_0x7277('0x33')]({'color':_0x7277('0x22'),'background-color':_0x7277('0x6b')});}else if(_0x3bf839[0x0]==_0x7277('0x1a')){orangeScore--;_0x4ba283[_0x7277('0x33')]('pointer-events',_0x7277('0x7e'));$(_0x7277('0x60'))['val'](orangeScore);_0x4ba283[_0x7277('0x33')]({'color':_0x7277('0x22'),'background-color':_0x7277('0x80')});}});socket['on'](_0x7277('0x67'),function(_0x492d12){if(_0x492d12==_0x7277('0x83')){$('#game-win')[_0x7277('0x51')](_0x7277('0x25'));$(_0x7277('0x2f'))['css'](_0x7277('0x1b'),_0x7277('0x6b'));$(_0x7277('0x2f'))['show']();musicPlay(music1,15.9);}else{$('#game-win')['text']('ORANGANG\x20WIN');$(_0x7277('0x2f'))[_0x7277('0x33')](_0x7277('0x1b'),_0x7277('0x80'));$(_0x7277('0x2f'))[_0x7277('0x29')]();musicPlay(music2,18.1);}setTimeout(function(){$(_0x7277('0x2f'))[_0x7277('0x59')]();},0x1388);});socket['on'](_0x7277('0x8'),function(){$('#game')[_0x7277('0x33')](_0x7277('0x55'),_0x7277('0x7e'));$(_0x7277('0x81'))[_0x7277('0x59')]();});socket['on'](_0x7277('0x78'),function(){$(_0x7277('0x4'))[_0x7277('0x33')]('pointer-events',_0x7277('0x36'));$(_0x7277('0x81'))['show']();if(spymaster){$(_0x7277('0x4'))[_0x7277('0x33')](_0x7277('0x55'),_0x7277('0x7e'));}});socket['on']('red\x20spymaster',function(){$(_0x7277('0x9'))[_0x7277('0x29')]();$('#shuffle-red-spy')['show']();$(_0x7277('0x3c'))[_0x7277('0x29')]();});socket['on'](_0x7277('0x7c'),function(){$(_0x7277('0x5c'))['show']();$(_0x7277('0x26'))[_0x7277('0x29')]();$(_0x7277('0x3c'))['show']();});socket['on'](_0x7277('0x62'),function(){$('#next-turn')[_0x7277('0x59')]();$(_0x7277('0x5c'))[_0x7277('0x59')]();$('#red-spymaster-btn')[_0x7277('0x59')]();$(_0x7277('0x0'))['hide']();$(_0x7277('0x26'))[_0x7277('0x59')]();$(_0x7277('0x4'))[_0x7277('0x33')](_0x7277('0x55'),_0x7277('0x7e'));$(_0x7277('0x4e'))[_0x7277('0x33')]({'color':_0x7277('0x1d'),'background-color':_0x7277('0x3d'),'border':_0x7277('0x5f')});$(_0x7277('0x2'))[_0x7277('0x33')]({'color':_0x7277('0x77'),'background-color':_0x7277('0x22'),'border':_0x7277('0x63')});$('.death-word')[_0x7277('0x33')]({'background-color':_0x7277('0x77'),'border':_0x7277('0x12')});$(_0x7277('0x41'))[_0x7277('0x33')]({'color':_0x7277('0x80'),'background-color':_0x7277('0x3d'),'border':_0x7277('0x20')});});socket['on'](_0x7277('0x7'),function(_0x44b005){console['log'](_0x44b005['name']);$(_0x7277('0x79')+_0x44b005[_0x7277('0x6e')])[_0x7277('0x33')]('color',_0x7277('0x6'));$('#shuffle-teams')[_0x7277('0x59')]();$(_0x7277('0x4'))[_0x7277('0x33')](_0x7277('0x55'));if(_0x44b005[_0x7277('0x48')]=='red'){$('#---'+_0x44b005[_0x7277('0x6e')])['css'](_0x7277('0x57'),_0x7277('0x6'));$(_0x7277('0x9'))[_0x7277('0x59')]();$(_0x7277('0x0'))[_0x7277('0x59')]();redSpy=!![];if(redSpy&&blueSpy){socket['emit'](_0x7277('0x78'),currentTeam);$('#choose')[_0x7277('0x59')]();}}else if(_0x44b005[_0x7277('0x48')]==_0x7277('0x1a')){$(_0x7277('0x79')+_0x44b005[_0x7277('0x6e')])[_0x7277('0x33')](_0x7277('0x57'),'red');$(_0x7277('0x5c'))[_0x7277('0x59')]();$(_0x7277('0x26'))[_0x7277('0x59')]();blueSpy=!![];if(redSpy&&blueSpy){socket[_0x7277('0x6f')]('user\x20enable',currentTeam);$(_0x7277('0x1'))[_0x7277('0x59')]();}}});socket['on'](_0x7277('0x70'),function(_0x583a65){if(_0x583a65=='red'){$(_0x7277('0x3c'))[_0x7277('0x59')]();$('#red-spymaster-btn')['hide']();$(_0x7277('0x0'))[_0x7277('0x59')]();$(_0x7277('0x0'))[_0x7277('0x59')]();$(_0x7277('0x4'))[_0x7277('0x33')](_0x7277('0x55'),_0x7277('0x7e'));$(_0x7277('0x4e'))[_0x7277('0x33')]({'color':_0x7277('0x1d'),'background-color':_0x7277('0x3d'),'border':_0x7277('0x5f')});$(_0x7277('0x2'))[_0x7277('0x33')]({'color':'black','background-color':_0x7277('0x22'),'border':_0x7277('0x63')});$(_0x7277('0x11'))['css']({'background-color':'black','border':_0x7277('0x12')});$(_0x7277('0x41'))[_0x7277('0x33')]({'color':_0x7277('0x80'),'background-color':_0x7277('0x3d'),'border':_0x7277('0x20')});$(_0x7277('0x81'))[_0x7277('0x59')]();}else if(_0x583a65==_0x7277('0x1a')){$(_0x7277('0x3c'))[_0x7277('0x59')]();$(_0x7277('0x5c'))[_0x7277('0x59')]();$(_0x7277('0x26'))[_0x7277('0x59')]();$(_0x7277('0x26'))[_0x7277('0x59')]();$(_0x7277('0x4'))[_0x7277('0x33')](_0x7277('0x55'),'none');$(_0x7277('0x4e'))[_0x7277('0x33')]({'color':_0x7277('0x1d'),'background-color':'#18241A','border':'3px\x20solid\x20green'});$('.regular-word')[_0x7277('0x33')]({'color':'black','background-color':_0x7277('0x22'),'border':_0x7277('0x63')});$('.death-word')[_0x7277('0x33')]({'background-color':_0x7277('0x77'),'border':_0x7277('0x12')});$(_0x7277('0x41'))[_0x7277('0x33')]({'color':_0x7277('0x80'),'background-color':_0x7277('0x3d'),'border':'3px\x20solid\x20orange'});$(_0x7277('0x81'))[_0x7277('0x59')]();};});socket['on'](_0x7277('0xd'),function(){socket[_0x7277('0x6f')](_0x7277('0x78'),'blue');});socket['on'](_0x7277('0x52'),function(){$(_0x7277('0x5c'))[_0x7277('0x59')]();$(_0x7277('0x9'))[_0x7277('0x59')]();$(_0x7277('0x0'))['hide']();$(_0x7277('0x26'))[_0x7277('0x59')]();});socket['on'](_0x7277('0x68'),function(_0x12b094){$(_0x7277('0x47')+_0x12b094+'\x27)')[_0x7277('0x33')](_0x7277('0x53'),_0x7277('0x12'));});socket['on'](_0x7277('0x44'),function(_0x553e66){$(_0x7277('0x47')+_0x553e66+'\x27)')[_0x7277('0x33')]('border','5px\x20solid\x20red');});socket['on'](_0x7277('0x46'),function(){$('#wait')[_0x7277('0x59')]();});socket['on'](_0x7277('0xf'),function(_0x14b436){$(_0x7277('0x1'))[_0x7277('0x59')]();$('#spinner')[_0x7277('0x29')]();$(_0x7277('0x58'))['hide']();$(_0x7277('0x54'))[_0x7277('0x29')]();$(_0x7277('0x54'))[_0x7277('0x51')](_0x14b436);$(_0x7277('0x4'))[_0x7277('0x33')](_0x7277('0x55'),_0x7277('0x7e'));});socket['on']('Enough\x20Players',function(){$(_0x7277('0x56'))[_0x7277('0x59')]();$('#wait')[_0x7277('0x59')]();$(_0x7277('0x58'))[_0x7277('0x29')]();$(_0x7277('0x1'))['hide']();$(_0x7277('0x1'))[_0x7277('0x33')](_0x7277('0x57'),_0x7277('0x22'));socket[_0x7277('0x6f')](_0x7277('0x78'),currentTeam);});socket['on'](_0x7277('0x17'),function(_0x1bc743){let _0x1aff3b;let _0x1c2810;if(_0x1bc743[0x0]>0x1||_0x1bc743[0x0]==0x0){_0x1aff3b=_0x7277('0x3e');}else{_0x1aff3b=_0x7277('0x38');}if(_0x1bc743[0x1]>0x1||_0x1bc743[0x1]==0x0){_0x1c2810='players';}else{_0x1c2810='player';}$(_0x7277('0x2e'))[_0x7277('0x51')]('('+_0x1bc743[0x0]+'\x20'+_0x1aff3b+')');$(_0x7277('0x14'))[_0x7277('0x51')]('('+_0x1bc743[0x1]+'\x20'+_0x1c2810+')');});
+var socket = io();
+var currentTeam = 'blue';
+var currentGame;
+var orangeScore = 9
+var greenScore = 8
+var redTeam;
+var blueTeam;
+var gameState = [];
+var username;
+var blueSpy;
+var redSpy;
+var spymaster = false;
+
+
+var music1 = document.getElementById('hazit')
+music1.volume = '0.1'
+var music2 = document.getElementById('nezl')
+music2.volume = '0.1'
+
+function winCheck(){
+if(orangeScore == 0) {
+        socket.emit('game win', 'ORANGANG');
+    } else if (greenScore == 0){
+        socket.emit('game win', 'GREENGOS');
+    }
+}
+
+function musicPlay(music, time) {
+music.currentTime = time
+music.play();
+}
+function musicStop(music) {
+music.pause();
+}
+function dynamicFontSize(word, initialFontSize){
+let length = word.length;
+if(length >= 10) {
+    return initialFontSize - length + 3
+}
+}
+$('#red-spymaster-btn').click(function(){
+    spymaster= true;
+    socket.emit('spymaster chosen', {team: 'red', type: 'manual'});
+    redSpy = true;
+});
+$('#blue-spymaster-btn').click(function(){
+    spymaster= true;
+    socket.emit('spymaster chosen', {team: 'blue', type: 'manual'});
+    blueSpy = true;
+});
+$('#shuffle-blue-spy').click(function(){
+    $('#shuffle-blue-spy').hide();
+    $('#blue-spymaster-btn').hide();
+    socket.emit('spymaster chosen', {team: 'blue', type: 'random'});
+    blueSpy = true;
+})
+$('#shuffle-red-spy').click(function(){
+    $('#shuffle-red-spy').hide();
+    $('#red-spymaster-btn').hide();
+    socket.emit('spymaster chosen', {team: 'red', type: 'random'});
+    redSpy = true;
+})
+
+$('#shuffle-teams').click(function(){
+    socket.emit('shuffle teams');
+    $('#blue-spymaster-btn').hide();
+    $('#red-spymaster-btn').hide();
+    $('#shuffle-red-spy').hide();
+    $('#shuffle-blue-spy').hide();
+    socket.emit('new game');
+    socket.emit('user disable', 'red');
+    socket.emit('user disable', 'blue');
+    socket.emit('hide wait');
+});
+
+$('#next').click(function(){
+socket.emit('username', $('#tagBar').val());
+username = $('#tagBar').val();
+$('#gamer-tag').hide();
+$('#team-select').show();
+}); 
+// RED
+$('#redButton').click(function(){
+    socket.emit('team select', 'red');
+    $('#game-screen').show();
+    $('#controls').show();
+    $('#team-select').hide();
+    socket.emit('Player Amount', 'red');
+});
+// BLUE
+$('#blueButton').click(function(){
+    socket.emit('team select', 'blue');
+    $('#game-screen').show();
+    $('#controls').show();
+    $('#team-select').hide();
+    socket.emit('Player Amount', 'blue');
+});
+// 
+$('#new-game').click(function(){
+    socket.emit('new game');
+    console.log('test');
+    socket.emit('user disable', 'red');
+    socket.emit('user disable', 'blue');
+    socket.emit('hide wait');
+});
+$('#next-turn').click(function(){
+    if(currentTeam == 'red'){
+        socket.emit('switch team', 'blue');
+    } else {
+        socket.emit('switch team', 'red');
+    }
+});
+
+socket.on('team select', function(dataObj) {
+    if(!$(`#---${dataObj.name}`).length) {
+        if (dataObj.team == 'blue') {
+            //add team to blue li
+            $('#blue-list').append($(`<li class='tempuser' id="---${dataObj.name}">`).text(dataObj.name));
+            $(`#---${dataObj.name}`).css('font-size', `${dynamicFontSize(dataObj.name, 29)}px`); 
+        } else if(dataObj.team == 'red') {
+            //add team to red li
+            $('#red-list').append($(`<li class='tempuser' id="---${dataObj.name}">`).text(dataObj.name)); 
+            $(`#---${dataObj.name}`).css('font-size', `${dynamicFontSize(dataObj.name, 29)}px`);     
+        }
+    }
+});
+socket.on('error log', function(sentError){
+    $('body').append(`<div class="alert alert-warning" id="alerta" role="alert">${sentError.msg}</div>`)
+    if(sentError.type == 'error') {
+    $('#gamer-tag').show();
+    $('#team-select').hide();
+    }
+    setTimeout(function(){ $('#alerta').remove() }, 3000); 
+});
+socket.on('game screen', function(data){
+    socket.emit('user disable', 'blue');
+    $('#choose').show();
+    musicStop(music1);
+    musicStop(music2);
+    redSpy = false;
+    blueSpy = false;
+    $('.tempuser').css('color', 'white');
+    currentGame = data;
+    orangeScore = 9;
+    greenScore = 8;
+    $('#orange-score').val(orangeScore);
+    $('#green-score').val(greenScore);
+    $('#game').css("pointer-events", "none");
+    $('.temp').remove();
+    for(var i=0; i<5; i++){
+        $('#row1').append($(`<li class='temp col ${wordType(currentGame[i])}' value='${wordType(currentGame[i])}' id=BID_${i}>${currentGame[i].word}</li>`));
+    }
+    for(var i=5; i<10; i++){
+        $('#row2').append($(`<li class='temp col ${wordType(currentGame[i])}' value='${wordType(currentGame[i])}' id=BID_${i}>${currentGame[i].word}</li>`));
+    }
+    for(var i=10; i<15; i++){
+        $('#row3').append($(`<li class='temp col ${wordType(currentGame[i])}' value='${wordType(currentGame[i])}' id=BID_${i}>${currentGame[i].word}</li>`));
+    }
+    for(var i=15; i<20; i++){
+        $('#row4').append($(`<li class='temp col ${wordType(currentGame[i])}' value='${wordType(currentGame[i])}' id=BID_${i}>${currentGame[i].word}</li>`));
+    }
+    for(var i=20; i<25; i++){
+        $('#row5').append($(`<li class='temp col ${wordType(currentGame[i])}' value='${wordType(currentGame[i])}' id=BID_${i}>${currentGame[i].word}</li>`));
+    }
+    $('#turn-label').show();
+});
+
+socket.on('switch team', function(data){
+    if(data == 'blue'){
+        $('#game').css({'border': '5px solid orange'});
+        $('#turn-label').css('background-color', 'orange').text('ORANGANG TURN');
+        currentTeam = 'blue'
+        socket.emit('user enable', 'blue');
+        socket.emit('user disable', 'red');
+    } else {
+        $('#game').css({'border': '5px solid green'});
+        $('#turn-label').css('background-color', 'green').text('GREENGOS TURN');
+        currentTeam = 'red'
+        socket.emit('user enable', 'red');
+        socket.emit('user disable', 'blue');
+    }
+});
+socket.on('remove user', function(user){
+$(`#---${user}`).remove();
+});
+
+function wordType(wordObject){
+    if(wordObject.death){
+        return 'death-word'
+    } else if(wordObject.blue) {
+        return 'orange-word'
+    } else if(wordObject.red) {
+        return 'green-word'
+    } else {
+        return 'regular-word'
+    }
+}
+$("#word-list").click(function(event) {
+    var target = $( event.target );
+    $('#shuffle-teams').hide();
+    for(var i=0; i<25; i++){
+        if(target.attr('id') == `BID_${i}`){
+            if(target.attr('value') == 'regular-word'){
+            target.css( "background-color", "darkgray");
+            target.css( "color", "black");
+            target.css( "pointer-events", "none");
+            socket.emit('button clicked', ['regular', `BID_${i}`]);
+            console.log(gameState);
+            } else if (target.attr('value') == 'orange-word') {
+
+                //Handle Orange Score Win.
+                if (orangeScore == 0) {
+                    socket.emit('game win', 'blue');
+                } else {
+                    orangeScore-- 
+                }
+            winCheck();
+            $('#orange-score').val(orangeScore);
+            target.css( "background-color", "orange");
+            target.css( "pointer-events", "none");
+            socket.emit('button clicked', ['blue', `BID_${i}`]);
+            } else if (target.attr('value') == 'green-word') {
+                
+                //Handle Green Score Win.
+                if (greenScore == 0) {
+                    socket.emit('game win', 'red');
+                } else {
+                    greenScore-- 
+                }
+            winCheck();
+            $('#green-score').val(greenScore);
+            target.css( "background-color", "green");
+            target.css( "pointer-events", "none");
+            socket.emit('button clicked', ['red', `BID_${i}`]);
+            } else if(target.attr('value') == 'death-word'){
+
+                //Handle Death Win.
+                if (currentTeam == 'red') {
+                    socket.emit('game win', 'ORANGANG');
+                } else {
+                    socket.emit('game win', 'GREENGOS');
+                }
+
+            target.css( "background-color", "black");
+            socket.emit('button clicked', ['death', `BID_${i}`]);
+            target.css( "pointer-events", "none");
+            $('#game').css("pointer-events", "none");
+            }
+        }
+    }
+});
+
+//updated buttons on other sockets
+socket.on('update button', function(data){
+    $('#shuffle-teams').hide();
+    var passedTarget = $(`#${data[1]}`);
+        if(data[0] == 'death'){
+            passedTarget.css( "background-color", "black");
+            passedTarget.css( "pointer-events", "none");
+            $('#game').css("pointer-events", "none");
+        } else if(data[0] == 'regular'){
+            passedTarget.css( "pointer-events", "none");
+            passedTarget.css( "background-color", "darkgray");
+            passedTarget.css( "color", "black");
+        } else if(data[0] == 'red') {
+            greenScore--
+            passedTarget.css( "pointer-events", "none");
+            $('#green-score').val(greenScore);
+            passedTarget.css({'color': 'white', 'background-color': 'green'});
+        } else if(data[0] == 'blue') {
+            orangeScore--
+            passedTarget.css( "pointer-events", "none");
+            $('#orange-score').val(orangeScore);
+            passedTarget.css({'color': 'white', 'background-color': 'orange'});
+        }
+});
+
+socket.on('game win', function(team){
+    if(team == 'ORANGANG'){
+        $('#game-win').text('GREENGOS WIN');
+        $('#game-win').css('background-color', 'green');
+        $('#game-win').show();
+        musicPlay(music1, 0);
+    } else {
+        $('#game-win').text('ORANGANG WIN');
+        $('#game-win').css('background-color', 'orange');
+        $('#game-win').show();
+        musicPlay(music2, 0);
+    }
+    setTimeout(function(){ $('#game-win').hide() }, 5000);
+});   
+
+socket.on('user disable', function(){
+    $('#game').css("pointer-events", "none");
+    $('#next-turn').hide();
+});
+
+socket.on('user enable', function(){
+    $('#game').css("pointer-events", "auto");
+    $('#next-turn').show();
+    if(spymaster){
+        $('#game').css("pointer-events", "none");
+    }
+});
+
+socket.on('red spymaster', function(){
+    $('#red-spymaster-btn').show();
+    $('#shuffle-red-spy').show();
+    $('#shuffle-teams').show();
+    
+});
+socket.on('blue spymaster', function(){
+    $('#blue-spymaster-btn').show();
+    $('#shuffle-blue-spy').show();
+    $('#shuffle-teams').show();
+});
+
+
+
+
+//Spymasters have their page updated with this.
+socket.on('set as spymaster', function(){   
+    $('#next-turn').hide();
+    $('#blue-spymaster-btn').hide();
+    $('#red-spymaster-btn').hide();
+    $('#shuffle-red-spy').hide();
+    $('#shuffle-blue-spy').hide();
+    $('#game').css('pointer-events', 'none');
+    $('.green-word').css({'color': '#0EB324', 'background-color': '#18241A', 'border': '3px solid green'});
+    $('.regular-word').css({'color': 'black', 'background-color': 'white', 'border': '1px solid black'});
+    $('.death-word').css({'background-color': 'black', 'border': '5px solid red'});
+    $('.orange-word').css({'color': 'orange', 'background-color': '#18241A', 'border': '3px solid orange'});
+});
+
+//Everyone is informed who spymaster is, and controlls are removed.
+socket.on('spymaster chosen', function(data){
+    console.log(data.name);
+    $(`#---${data.name}`).css('color', 'red');
+    $('#shuffle-teams').hide();
+    $('#game').css('pointer-events');
+    if(data.team == 'red') {
+        $(`#---${data.name}`).css('color', 'red');
+        $('#red-spymaster-btn').hide();
+        $('#shuffle-red-spy').hide();
+        redSpy = true;
+        if(redSpy && blueSpy){
+            socket.emit('user enable', currentTeam);
+            $('#choose').hide();
+        }
+    }
+    else if(data.team == 'blue'){
+        $(`#---${data.name}`).css('color', 'red');
+        $('#blue-spymaster-btn').hide();
+        $('#shuffle-blue-spy').hide();
+        blueSpy = true;
+        if(redSpy && blueSpy){
+            socket.emit('user enable', currentTeam);
+            $('#choose').hide();
+
+        }
+    }
+    
+});
+
+socket.on('become spymaster', function(team){
+    if(team == 'red') {
+        $('#shuffle-teams').hide();
+        $('#red-spymaster-btn').hide();
+        $('#shuffle-red-spy').hide();
+        $('#shuffle-red-spy').hide();
+        $('#game').css('pointer-events', 'none');
+        $('.green-word').css({'color': '#0EB324', 'background-color': '#18241A', 'border': '3px solid green'});
+        $('.regular-word').css({'color': 'black', 'background-color': 'white', 'border': '1px solid black'});
+        $('.death-word').css({'background-color': 'black', 'border': '5px solid red'});
+        $('.orange-word').css({'color': 'orange', 'background-color': '#18241A', 'border': '3px solid orange'});
+        $('#next-turn').hide();
+    } else if(team == 'blue') {
+        $('#shuffle-teams').hide();
+        $('#blue-spymaster-btn').hide();
+        $('#shuffle-blue-spy').hide();
+        $('#shuffle-blue-spy').hide();
+        $('#game').css('pointer-events', 'none');
+        $('.green-word').css({'color': '#0EB324', 'background-color': '#18241A', 'border': '3px solid green'});
+        $('.regular-word').css({'color': 'black', 'background-color': 'white', 'border': '1px solid black'});
+        $('.death-word').css({'background-color': 'black', 'border': '5px solid red'});
+        $('.orange-word').css({'color': 'orange', 'background-color': '#18241A', 'border': '3px solid orange'});
+        $('#next-turn').hide();
+    };
+});
+
+socket.on('game ready', function() {
+    socket.emit('user enable', 'blue');
+});
+
+socket.on('shuffle clicked', function(){
+    $('#blue-spymaster-btn').hide();
+    $('#red-spymaster-btn').hide();
+    $('#shuffle-red-spy').hide();
+    $('#shuffle-blue-spy').hide();
+});
+
+socket.on('red spymaster css', function(data) {
+    $(`.tempuser:contains('${data}')`).css('border', '5px solid red');
+});
+socket.on('blue spymaster css', function(data) {
+    $(`.tempuser:contains('${data}')`).css('border', '5px solid red');
+});
+
+socket.on('Enough Players', function(){
+    $('#wait').hide();
+});
+
+socket.on('wait', function(data){
+    $('#choose').hide();
+    $('#spinner').show();
+    $('.controls').hide();
+    $('#wait').show();
+    $('#wait').text(data);
+    $('#game').css('pointer-events', 'none');
+});
+socket.on('Enough Players', function(){
+    $('#spinner').hide();
+    $('#wait').hide();
+    $('.controls').show();
+    $('#choose').hide();
+    $('#choose').css('color','white');
+    socket.emit('user enable', currentTeam);
+});
+socket.on('Span Update', function(data){
+    let redstr;
+    let bluestr;
+    if(data[0] > 1 || data[0] == 0) {
+        redstr = 'players'
+    } else {
+        redstr = 'player'
+    }
+    if(data[1] > 1 || data[1] == 0) {
+        bluestr = 'players'
+    } else {
+        bluestr = 'player'
+    }
+    $('#green-span').text(`(${data[0]} ${redstr})`);
+    $('#orange-span').text(`(${data[1]} ${bluestr})`);
+});
