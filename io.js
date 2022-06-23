@@ -168,13 +168,13 @@ socket.on('game screen', function(data){
 socket.on('switch team', function(data){
     if(data == 'blue'){
         $('#game').css({'border': '5px solid orange'});
-        $('#turn-label').css('background-color', 'orange').text('ORANGANG TURN');
+        $('#turn-label').css('background-color', 'orange').text("ORANGE TEAM'S TURN");
         currentTeam = 'blue'
         socket.emit('user enable', 'blue');
         socket.emit('user disable', 'red');
     } else {
         $('#game').css({'border': '5px solid green'});
-        $('#turn-label').css('background-color', 'green').text('GREENGOS TURN');
+        $('#turn-label').css('background-color', 'green').text("GREEN TEAM' TURN");
         currentTeam = 'red'
         socket.emit('user enable', 'red');
         socket.emit('user disable', 'blue');
@@ -277,12 +277,12 @@ socket.on('update button', function(data){
 
 socket.on('game win', function(team){
     if(team == 'ORANGANG'){
-        $('#game-win').text('GREENGOS WIN');
+        $('#game-win').text('GREEN WIN');
         $('#game-win').css('background-color', 'green');
         $('#game-win').show();
         musicPlay(music1, 0);
     } else {
-        $('#game-win').text('ORANGANG WIN');
+        $('#game-win').text('ORANGE WIN');
         $('#game-win').css('background-color', 'orange');
         $('#game-win').show();
         musicPlay(music2, 0);
